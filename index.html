@@ -287,6 +287,362 @@ body.dark-mode .badge-high {
   border-color: rgba(248, 113, 113, 0.35) !important;
 }
 
+/* ═══════════════════════════════════════════════════════════════════
+   ELDERLY ACCESSIBILITY: HIGH CONTRAST & 5-LEVEL FONT SCALING
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* 1. Global High Contrast for Light Mode (Resolves font blending with cream/orange backgrounds) */
+body:not(.dark-mode) .glass-card,
+body:not(.dark-mode) .ex-card {
+  background: rgba(255, 255, 255, 0.86) !important;
+  border: 1.5px solid rgba(215, 175, 120, 0.45) !important;
+  box-shadow: 0 4px 20px rgba(160, 110, 50, 0.12), 0 1px 0 rgba(255, 255, 255, 0.95) inset !important;
+}
+
+body:not(.dark-mode) *[style*="color:#a07850"],
+body:not(.dark-mode) *[style*="color: #a07850"],
+body:not(.dark-mode) *[style*="color:#b08050"],
+body:not(.dark-mode) *[style*="color: #b08050"],
+body:not(.dark-mode) *[style*="color:#a87d4f"],
+body:not(.dark-mode) *[style*="color: #a87d4f"],
+body:not(.dark-mode) *[style*="color:#9a6b38"],
+body:not(.dark-mode) *[style*="color: #9a6b38"],
+body:not(.dark-mode) *[style*="color:#92400e"],
+body:not(.dark-mode) *[style*="color: #92400e"] {
+  color: #5d3209 !important; /* Deep warm brown with WCAG AAA contrast */
+  font-weight: 550 !important;
+}
+
+body:not(.dark-mode) *[style*="color:#5a3510"],
+body:not(.dark-mode) *[style*="color: #5a3510"],
+body:not(.dark-mode) *[style*="color:#7c4010"],
+body:not(.dark-mode) *[style*="color: #7c4010"],
+body:not(.dark-mode) *[style*="color:#4a3520"] {
+  color: #3b1b02 !important; /* Maximum clarity dark brown for headers */
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   THEME SWITCHING & HIGH CONTRAST AUDIT (LIGHT & DARK MODE)
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─── 3KQ SCREEN & QUESTION CONTROLS ─── */
+body.dark-mode #step-3kq-title {
+  color: #fb923c !important;
+}
+body.dark-mode #kq-q-num {
+  color: #cbd5e1 !important;
+}
+body:not(.dark-mode) #kq-q-num {
+  color: #7c4010 !important;
+}
+body.dark-mode #kq-question {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
+}
+body:not(.dark-mode) #kq-question {
+  color: #2b1100 !important;
+}
+body.dark-mode #btn-speak-kq {
+  background: rgba(30, 41, 59, 0.95) !important;
+  border: 1.5px solid rgba(251, 146, 60, 0.5) !important;
+  color: #fed7aa !important;
+}
+body.dark-mode #sub-q1 {
+  background: rgba(30, 41, 59, 0.95) !important;
+  border: 1.5px solid rgba(251, 146, 60, 0.45) !important;
+}
+body.dark-mode #sub-q1-falls-title,
+body.dark-mode #sub-q1-injury-title {
+  color: #fed7aa !important;
+}
+.sub-q-btn {
+  transition: all .2s ease;
+}
+body:not(.dark-mode) .sub-q-btn {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1.5px solid rgba(215, 175, 120, 0.4) !important;
+  color: #5d3209 !important;
+  font-weight: 600 !important;
+}
+body:not(.dark-mode) .sub-q-btn.active {
+  background: linear-gradient(135deg, #ea580c, #d97706) !important;
+  border: 2px solid #c2410c !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.3) !important;
+  font-weight: 700 !important;
+}
+body.dark-mode .sub-q-btn {
+  background: rgba(15, 23, 42, 0.9) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.16) !important;
+  color: #f1f5f9 !important;
+}
+body.dark-mode .sub-q-btn.active {
+  background: linear-gradient(135deg, #ea580c, #c2410c) !important;
+  border: 2px solid #fb923c !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(234, 88, 12, 0.45) !important;
+  font-weight: 700 !important;
+}
+
+/* 3KQ Yes / No Action Buttons */
+body.dark-mode .btn-yes {
+  background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
+  border: 2px solid #f87171 !important;
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4) !important;
+}
+body.dark-mode .btn-yes:disabled {
+  background: #450a0a !important;
+  border: 2px solid #ef4444 !important;
+  color: #fecaca !important;
+  opacity: 1 !important;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.3) !important;
+}
+body.dark-mode .btn-no {
+  background: linear-gradient(135deg, #16a34a, #15803d) !important;
+  border: 2px solid #4ade80 !important;
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+  box-shadow: 0 6px 20px rgba(22, 163, 74, 0.4) !important;
+}
+body.dark-mode #box-kq-lowrisk-choice {
+  background: rgba(6, 78, 59, 0.6) !important;
+  border: 2px solid #22c55e !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4) !important;
+}
+body.dark-mode #kq-lowrisk-title {
+  color: #86efac !important;
+}
+body.dark-mode #kq-lowrisk-desc {
+  color: #dcfce7 !important;
+}
+body.dark-mode #btn-lowrisk-phys {
+  background: linear-gradient(135deg, #16a34a, #15803d) !important;
+  color: #ffffff !important;
+}
+body.dark-mode #btn-lowrisk-skip {
+  background: #1e293b !important;
+  border: 1.5px solid rgba(251, 146, 60, 0.5) !important;
+  color: #fed7aa !important;
+}
+body.dark-mode #kq-hint {
+  color: #cbd5e1 !important;
+}
+
+/* ─── FONT MODAL IN LIGHT & DARK MODE ─── */
+body.dark-mode #modal-font-size .modal-box {
+  background: #0f172a !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.16) !important;
+  color: #f8fafc !important;
+}
+body.dark-mode #modal-font-title {
+  color: #ffffff !important;
+}
+body.dark-mode #modal-font-sub {
+  color: #cbd5e1 !important;
+}
+body.dark-mode .font-preview-box {
+  background: #1e293b !important;
+  border: 2px solid #f97316 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
+}
+body.dark-mode #font-preview-sample {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
+}
+body:not(.dark-mode) .font-preview-box {
+  background: #fff7ed !important;
+  border: 1.5px solid #fb923c !important;
+}
+body:not(.dark-mode) #font-preview-sample {
+  color: #3b1b02 !important;
+}
+body.dark-mode .font-stepper-wrap {
+  background: #1e293b !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+}
+body.dark-mode #font-stepper-text {
+  color: #fb923c !important;
+}
+body:not(.dark-mode) .font-stepper-wrap {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1.5px solid rgba(215, 175, 120, 0.4) !important;
+}
+.font-opt-card {
+  transition: all .2s ease;
+}
+body:not(.dark-mode) .font-opt-card {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border: 1.5px solid rgba(215, 175, 120, 0.35) !important;
+}
+body:not(.dark-mode) .font-opt-card .font-opt-title {
+  color: #3b1b02 !important;
+}
+body:not(.dark-mode) .font-opt-card .font-opt-sub {
+  color: #5d3209 !important;
+}
+body:not(.dark-mode) .font-opt-card.active {
+  background: #fef3c7 !important;
+  border: 2px solid #ea580c !important;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.22) !important;
+}
+body:not(.dark-mode) .font-opt-card.active .font-opt-title {
+  color: #7c2d12 !important;
+  font-weight: 700 !important;
+}
+body:not(.dark-mode) .font-opt-card.active .font-opt-sub {
+  color: #9a3412 !important;
+}
+body:not(.dark-mode) .font-opt-card.active .font-opt-badge {
+  background: #ea580c !important;
+  color: #ffffff !important;
+}
+body.dark-mode .font-opt-card {
+  background: #1e293b !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.12) !important;
+}
+body.dark-mode .font-opt-card .font-opt-title {
+  color: #f8fafc !important;
+}
+body.dark-mode .font-opt-card .font-opt-sub {
+  color: #94a3b8 !important;
+}
+body.dark-mode .font-opt-card .font-opt-badge {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #f8fafc !important;
+}
+body.dark-mode .font-opt-card.active {
+  background: #2a1f14 !important;
+  border: 2px solid #f97316 !important;
+  box-shadow: 0 0 16px rgba(249, 115, 22, 0.4) !important;
+}
+body.dark-mode .font-opt-card.active .font-opt-title {
+  color: #fed7aa !important;
+  font-weight: 700 !important;
+}
+body.dark-mode .font-opt-card.active .font-opt-sub {
+  color: #ffedd5 !important;
+}
+body.dark-mode .font-opt-card.active .font-opt-badge {
+  background: #ea580c !important;
+  color: #ffffff !important;
+}
+
+/* ─── 12-ITEM CHECKLIST & PHYSICAL TESTS IN DARK MODE ─── */
+body.dark-mode #q12-header-title,
+body.dark-mode #physical-header-title {
+  color: #f8fafc !important;
+}
+body.dark-mode #q12-header-desc,
+body.dark-mode #physical-header-desc,
+body.dark-mode #q12-count {
+  color: #cbd5e1 !important;
+}
+body.dark-mode #physical-banner {
+  background: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+body.dark-mode #physical-banner-text {
+  color: #fed7aa !important;
+}
+body.dark-mode #btn-skip-physical-top {
+  background: #0f172a !important;
+  color: #fb923c !important;
+  border-color: #f97316 !important;
+}
+
+/* Eliminate tiny unreadable fonts (anything < 11.5px is boosted) */
+*[style*="font-size:9px"],
+*[style*="font-size: 9px"],
+*[style*="font-size:9.5px"],
+*[style*="font-size: 9.5px"],
+*[style*="font-size:10px"],
+*[style*="font-size: 10px"] {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+}
+
+/* 2. 5-Level Proportional Font Scaling System */
+/* Level 1: Standard 100% (Default) */
+body.font-lvl-1 { font-size: 100%; }
+
+/* Level 2: Medium (+10%) */
+body.font-lvl-2 { font-size: 110%; }
+body.font-lvl-2 *[style*="font-size:10px"],
+body.font-lvl-2 *[style*="font-size:11px"],
+body.font-lvl-2 *[style*="font-size:12px"] { font-size: 13.5px !important; }
+body.font-lvl-2 *[style*="font-size:13px"] { font-size: 14.5px !important; }
+body.font-lvl-2 *[style*="font-size:14px"] { font-size: 15.5px !important; }
+body.font-lvl-2 *[style*="font-size:16px"] { font-size: 18px !important; }
+body.font-lvl-2 *[style*="font-size:17px"],
+body.font-lvl-2 *[style*="font-size:18px"] { font-size: 20px !important; }
+body.font-lvl-2 *[style*="font-size:20px"],
+body.font-lvl-2 *[style*="font-size:21px"] { font-size: 23px !important; }
+body.font-lvl-2 *[style*="font-size:22px"],
+body.font-lvl-2 *[style*="font-size:23px"] { font-size: 25px !important; }
+body.font-lvl-2 .btn-glass-primary,
+body.font-lvl-2 .btn-glass-outline,
+body.font-lvl-2 .glass-tab,
+body.font-lvl-2 .nav-label { font-size: 110% !important; min-height: auto !important; }
+
+/* Level 3: Large (+22%) ⭐ Recommended for seniors 60+ */
+body.font-lvl-3 { font-size: 122%; }
+body.font-lvl-3 *[style*="font-size:10px"],
+body.font-lvl-3 *[style*="font-size:11px"],
+body.font-lvl-3 *[style*="font-size:12px"] { font-size: 15px !important; }
+body.font-lvl-3 *[style*="font-size:13px"] { font-size: 16.5px !important; }
+body.font-lvl-3 *[style*="font-size:14px"] { font-size: 17.5px !important; }
+body.font-lvl-3 *[style*="font-size:16px"] { font-size: 20px !important; }
+body.font-lvl-3 *[style*="font-size:17px"],
+body.font-lvl-3 *[style*="font-size:18px"] { font-size: 22px !important; }
+body.font-lvl-3 *[style*="font-size:20px"],
+body.font-lvl-3 *[style*="font-size:21px"] { font-size: 25px !important; }
+body.font-lvl-3 *[style*="font-size:22px"],
+body.font-lvl-3 *[style*="font-size:23px"] { font-size: 27px !important; }
+body.font-lvl-3 .btn-glass-primary,
+body.font-lvl-3 .btn-glass-outline,
+body.font-lvl-3 .glass-tab,
+body.font-lvl-3 .nav-label { font-size: 122% !important; min-height: auto !important; }
+
+/* Level 4: Extra Large (+35%) */
+body.font-lvl-4 { font-size: 135%; }
+body.font-lvl-4 *[style*="font-size:10px"],
+body.font-lvl-4 *[style*="font-size:11px"],
+body.font-lvl-4 *[style*="font-size:12px"] { font-size: 16.5px !important; }
+body.font-lvl-4 *[style*="font-size:13px"] { font-size: 18px !important; }
+body.font-lvl-4 *[style*="font-size:14px"] { font-size: 19.5px !important; }
+body.font-lvl-4 *[style*="font-size:16px"] { font-size: 22px !important; }
+body.font-lvl-4 *[style*="font-size:17px"],
+body.font-lvl-4 *[style*="font-size:18px"] { font-size: 24.5px !important; }
+body.font-lvl-4 *[style*="font-size:20px"],
+body.font-lvl-4 *[style*="font-size:21px"] { font-size: 27.5px !important; }
+body.font-lvl-4 *[style*="font-size:22px"],
+body.font-lvl-4 *[style*="font-size:23px"] { font-size: 30px !important; }
+body.font-lvl-4 .btn-glass-primary,
+body.font-lvl-4 .btn-glass-outline,
+body.font-lvl-4 .glass-tab,
+body.font-lvl-4 .nav-label { font-size: 135% !important; min-height: auto !important; }
+
+/* Level 5: Jumbo Maximum (+50%) */
+body.font-lvl-5 { font-size: 150%; }
+body.font-lvl-5 *[style*="font-size:10px"],
+body.font-lvl-5 *[style*="font-size:11px"],
+body.font-lvl-5 *[style*="font-size:12px"] { font-size: 18px !important; }
+body.font-lvl-5 *[style*="font-size:13px"] { font-size: 19.5px !important; }
+body.font-lvl-5 *[style*="font-size:14px"] { font-size: 21.5px !important; }
+body.font-lvl-5 *[style*="font-size:16px"] { font-size: 24.5px !important; }
+body.font-lvl-5 *[style*="font-size:17px"],
+body.font-lvl-5 *[style*="font-size:18px"] { font-size: 27px !important; }
+body.font-lvl-5 *[style*="font-size:20px"],
+body.font-lvl-5 *[style*="font-size:21px"] { font-size: 30.5px !important; }
+body.font-lvl-5 *[style*="font-size:22px"],
+body.font-lvl-5 *[style*="font-size:23px"] { font-size: 33px !important; }
+body.font-lvl-5 .btn-glass-primary,
+body.font-lvl-5 .btn-glass-outline,
+body.font-lvl-5 .glass-tab,
+body.font-lvl-5 .nav-label { font-size: 150% !important; min-height: auto !important; }
+
 /* ─── SLIDE SYSTEM ─── */
 .slide{display:none;}
 .slide.active{display:block;}
@@ -387,6 +743,36 @@ body.dark-mode .badge-high {
 .glass-tab.active{
   background:rgba(255,255,255,.92);color:#7c3010;
   box-shadow:0 2px 10px rgba(180,120,60,.15),0 1px 0 rgba(255,255,255,.9) inset;
+}
+/* Physical test tabs: clearly framed layer */
+.test-tab-bar{
+  background:rgba(255,237,213,.85);
+  border:2px solid rgba(234,88,12,.45);
+  box-shadow:0 4px 14px rgba(194,65,12,.15);
+  padding:6px;gap:6px;
+}
+.test-tab{
+  background:rgba(255,255,255,.75);
+  border:1.5px solid rgba(234,88,12,.3);
+  color:#9a3412;
+}
+.test-tab.active{
+  background:linear-gradient(135deg,#f97316,#ea580c);
+  color:#fff;border-color:#c2410c;
+  box-shadow:0 3px 10px rgba(234,88,12,.4);
+}
+body.dark-mode .test-tab-bar{
+  background:rgba(30,41,59,.95) !important;
+  border:2px solid rgba(251,146,60,.55) !important;
+}
+body.dark-mode .test-tab{
+  background:rgba(51,65,85,.9) !important;
+  border:1.5px solid rgba(148,163,184,.4) !important;
+  color:#e2e8f0 !important;
+}
+body.dark-mode .test-tab.active{
+  background:linear-gradient(135deg,#f97316,#ea580c) !important;
+  color:#fff !important;border-color:#fb923c !important;
 }
 
 /* ─── COUNT BUTTON ─── */
@@ -625,14 +1011,15 @@ body.dark-mode #ex-modal div[style*="background:rgba(255,255,255"] { background:
       <div class="clay-title" style="font-size:20px;font-weight:700;line-height:1.1;display:flex;align-items:center;gap:6px;" id="top-title">
         <span>🛡️ เต็มก้าว (FULLSTEP)</span>
       </div>
-      <div style="font-size:11px;color:#b08050;font-weight:500;margin-top:2px;display:flex;align-items:center;gap:6px;" id="top-subtitle">
+      <div style="font-size:12px;color:#7c4010;font-weight:600;margin-top:2px;display:flex;align-items:center;gap:6px;" id="top-subtitle">
         <span id="top-hosp-tag">รพ.เปือยน้อย จ.ขอนแก่น 🏛️</span>
-        <span id="net-status-badge" style="background:rgba(34,197,94,.18);color:#15803d;border:1px solid rgba(34,197,94,.35);border-radius:10px;padding:1px 6px;font-size:9.5px;font-weight:700;">🟢 ออนไลน์</span>
+        <span id="net-status-badge" style="background:rgba(34,197,94,.18);color:#15803d;border:1px solid rgba(34,197,94,.35);border-radius:10px;padding:2px 7px;font-size:11px;font-weight:700;">🟢 ออนไลน์</span>
       </div>
     </div>
-    <div style="display:flex;align-items:center;gap:8px;">
-      <button onclick="syncDataOnline()" class="btn-glass-outline" style="min-height:36px;padding:6px 10px;font-size:12px;display:flex;align-items:center;gap:4px;color:#0284c7;" id="top-btn-sync-wrap" title="ซิงค์ข้อมูลคลาวด์">☁️ <span id="top-btn-sync" style="font-size:11px;font-weight:600;">ซิงค์</span></button>
-      <button onclick="speak('ยินดีต้อนรับสู่ เต็มก้าว ฟูลสเต็ป โรงพยาบาลเปือยน้อย แอปพลิเคชันประเมินและป้องกันการหกล้ม เสริมสร้างการก้าวเดินอย่างมั่นใจ')" class="btn-glass-outline" style="min-height:36px;padding:6px 10px;font-size:13px;" title="อ่านออกเสียง">🔊</button>
+    <div style="display:flex;align-items:center;gap:6px;">
+      <button onclick="openFontSizeModal()" class="btn-glass-outline" style="min-height:36px;padding:6px 9px;font-size:12px;display:inline-flex;align-items:center;gap:3px;color:#c2410c;font-weight:700;border-color:rgba(249,115,22,.45);background:rgba(255,247,237,.85);" title="ปรับขนาดตัวอักษร 5 ระดับ (สำหรับผู้สูงวัย)" id="top-btn-font">🔤 <span id="top-btn-font-lvl" style="font-size:11px;">ก</span></button>
+      <button onclick="syncDataOnline()" class="btn-glass-outline" style="min-height:36px;padding:6px 9px;font-size:12px;display:flex;align-items:center;gap:4px;color:#0284c7;" id="top-btn-sync-wrap" title="ซิงค์ข้อมูลคลาวด์">☁️ <span id="top-btn-sync" style="font-size:11px;font-weight:600;">ซิงค์</span></button>
+      <button onclick="speak('ยินดีต้อนรับสู่ เต็มก้าว ฟูลสเต็ป โรงพยาบาลเปือยน้อย แอปพลิเคชันประเมินและป้องกันการหกล้ม เสริมสร้างการก้าวเดินอย่างมั่นใจ')" class="btn-glass-outline" style="min-height:36px;padding:6px 9px;font-size:13px;" title="อ่านออกเสียง">🔊</button>
       <div onclick="openAvatarModal()" class="avatar-clay" style="width:38px;height:38px;font-size:20px;" title="กดเปลี่ยน Avatar">
         <span id="top-bar-avatar">👵</span>
       </div>
@@ -794,10 +1181,15 @@ body.dark-mode #ex-modal div[style*="background:rgba(255,255,255"] { background:
             </div>
           </div>
 
-          <!-- Filter Tabs for Notes -->
-          <div style="display:flex;gap:6px;margin-bottom:10px;overflow-x:auto;padding-bottom:2px;">
-            <button type="button" id="comm-tab-all" onclick="filterCommunityNotes('all')" class="btn-glass-outline" style="width:auto;min-height:28px;padding:3px 10px;font-size:11.5px;background:rgba(249,115,22,.16);border-color:#f97316;color:#c2410c;font-weight:700;">🌐 โน้ตที่แชร์ทั้งหมด</button>
-            <button type="button" id="comm-tab-mine" onclick="filterCommunityNotes('mine')" class="btn-glass-outline" style="width:auto;min-height:28px;padding:3px 10px;font-size:11.5px;">📌 โน้ตของฉัน</button>
+          <!-- Filter Tabs for Notes & Cloud Sync Refresh Button -->
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:10px;padding-bottom:2px;">
+            <div style="display:flex;gap:6px;overflow-x:auto;">
+              <button type="button" id="comm-tab-all" onclick="filterCommunityNotes('all')" class="btn-glass-outline" style="width:auto;min-height:28px;padding:3px 10px;font-size:11.5px;background:rgba(249,115,22,.16);border-color:#f97316;color:#c2410c;font-weight:700;">🌐 โน้ตที่แชร์ทั้งหมด</button>
+              <button type="button" id="comm-tab-mine" onclick="filterCommunityNotes('mine')" class="btn-glass-outline" style="width:auto;min-height:28px;padding:3px 10px;font-size:11.5px;">📌 โน้ตของฉัน</button>
+            </div>
+            <button type="button" onclick="fetchCommunityNotesFromCloud(true)" class="btn-glass-outline" style="width:auto;min-height:28px;padding:3px 9px;font-size:11.5px;color:#0284c7;border-color:rgba(2,132,199,.4);background:rgba(240,249,255,.8);display:inline-flex;align-items:center;gap:3px;flex-shrink:0;" title="ดึงโน้ตล่าสุดจากชุมชน (Google Sheets)">
+              🔄 <span id="comm-btn-refresh-text">รีเฟรช</span>
+            </button>
           </div>
 
           <!-- Notes Feed Container -->
@@ -1120,6 +1512,20 @@ body.dark-mode #ex-modal div[style*="background:rgba(255,255,255"] { background:
             <button type="button" class="glass-tab" id="btn-theme-dark" onclick="setAppTheme('dark')" style="padding:5px 8px;font-size:12px;">🌙 มืด</button>
           </div>
         </div>
+
+        <!-- Elderly 5-Level Font Size Row -->
+        <div style="display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid rgba(200,160,100,.14);margin-top:10px;">
+          <div style="display:flex;align-items:center;gap:10px;cursor:pointer;" onclick="openFontSizeModal()">
+            <div style="width:34px;height:34px;border-radius:10px;background:rgba(249,115,22,.15);display:flex;align-items:center;justify-content:center;font-size:18px;">🔤</div>
+            <div>
+              <div style="font-size:13px;font-weight:600;color:#5a3510;" id="setting-lbl-font">ขนาดตัวอักษรสำหรับผู้สูงวัย</div>
+              <div style="font-size:11px;color:#a07850;" id="setting-font-lvl-label">ปกติ (100%)</div>
+            </div>
+          </div>
+          <button type="button" onclick="openFontSizeModal()" class="btn-glass-outline" style="min-height:34px;padding:5px 12px;font-size:12px;font-weight:700;color:#c2410c;border-color:rgba(249,115,22,.45);background:rgba(255,247,237,.85);">
+            ⚙️ ปรับ 5 ระดับ
+          </button>
+        </div>
       </div>
 
       <!-- ══════ CARD: PRIVACY & SUPPORT (Clean Minimalist Grouped List) ══════ -->
@@ -1193,10 +1599,10 @@ body.dark-mode #ex-modal div[style*="background:rgba(255,255,255"] { background:
           <div onclick="openPrivacyModal()" style="display:flex;align-items:center;justify-content:space-between;padding:12px 6px;cursor:pointer;border-bottom:1px solid rgba(200,160,100,.12);transition:background .15s;border-radius:10px;" onmouseover="this.style.background='rgba(255,255,255,.4)'" onmouseout="this.style.background='none'">
             <div style="display:flex;align-items:center;gap:10px;">
               <span style="font-size:18px;width:24px;text-align:center;">🔒</span>
-              <span style="font-size:13px;font-weight:600;color:#5a3510;" id="row-lbl-privacy">นโยบายความเป็นส่วนตัว (Privacy Policy)</span>
+              <span style="font-size:13px;font-weight:600;color:#5a3510;" id="row-lbl-privacy">นโยบายความเป็นส่วนตัวและธรรมาภิบาลข้อมูล</span>
             </div>
             <div style="display:flex;align-items:center;gap:6px;">
-              <span style="font-size:10px;background:rgba(34,197,94,.15);color:#166534;padding:2px 6px;border-radius:6px;font-weight:600;">PDPA Compliant</span>
+              <span style="font-size:10px;background:rgba(34,197,94,.15);color:#166534;padding:2px 6px;border-radius:6px;font-weight:600;">Local-First / PDPA</span>
               <span style="color:#a07850;font-size:16px;">›</span>
             </div>
           </div>
@@ -1493,14 +1899,14 @@ body.dark-mode #ex-modal div[style*="background:rgba(255,255,255"] { background:
           <div id="sub-q1" style="display:none;background:rgba(255,246,230,.8);border:1.5px solid rgba(254,215,170,.9);border-radius:18px;padding:16px;margin-bottom:16px;">
             <div style="font-size:14px;font-weight:700;color:#c2410c;margin-bottom:8px;" id="sub-q1-falls-title">คำถามย่อย: ล้มกี่ครั้งแล้ว?</div>
             <div style="display:flex;gap:8px;margin-bottom:12px;">
-              <button onclick="setSubQ('falls','1')" id="falls-1" class="btn-glass-outline" style="flex:1;padding:10px;font-size:14px;">1 ครั้ง</button>
-              <button onclick="setSubQ('falls','2+')" id="falls-2" class="btn-glass-outline" style="flex:1;padding:10px;font-size:14px;">2 ครั้งขึ้นไป</button>
+              <button onclick="setSubQ('falls','1')" id="falls-1" class="btn-glass-outline sub-q-btn" style="flex:1;padding:10px;font-size:14px;">1 ครั้ง</button>
+              <button onclick="setSubQ('falls','2+')" id="falls-2" class="btn-glass-outline sub-q-btn" style="flex:1;padding:10px;font-size:14px;">2 ครั้งขึ้นไป</button>
             </div>
             
             <div style="font-size:14px;font-weight:700;color:#c2410c;margin-bottom:8px;" id="sub-q1-injury-title">ได้รับบาดเจ็บหรือไม่?</div>
             <div style="display:flex;gap:8px;margin-bottom:14px;">
-              <button onclick="setSubQ('injury','yes')" id="injury-yes" class="btn-glass-outline" style="flex:1;padding:10px;font-size:14px;">ได้รับบาดเจ็บ</button>
-              <button onclick="setSubQ('injury','no')" id="injury-no" class="btn-glass-outline" style="flex:1;padding:10px;font-size:14px;">ไม่ได้รับบาดเจ็บ</button>
+              <button onclick="setSubQ('injury','yes')" id="injury-yes" class="btn-glass-outline sub-q-btn" style="flex:1;padding:10px;font-size:14px;">ได้รับบาดเจ็บ</button>
+              <button onclick="setSubQ('injury','no')" id="injury-no" class="btn-glass-outline sub-q-btn" style="flex:1;padding:10px;font-size:14px;">ไม่ได้รับบาดเจ็บ</button>
             </div>
 
             <button id="sub-q1-next-btn" onclick="submitKQ1Sub()" class="btn-glass-primary" disabled style="opacity:.45;">
@@ -1525,7 +1931,7 @@ body.dark-mode #ex-modal div[style*="background:rgba(255,255,255"] { background:
                 💪 ทดสอบสมรรถภาพ 4 ท่าต่อ (มี Timer จับเวลา) →
               </button>
               <div style="display:flex;gap:8px;">
-                <button onclick="proceedTo12Q()" class="btn-glass-outline" style="flex:1;font-size:12px;padding:10px;background:white;" id="btn-lowrisk-12q">
+                <button onclick="proceedTo12Q()" class="btn-glass-outline" style="display:none;flex:1;font-size:12px;padding:10px;background:white;" id="btn-lowrisk-12q">
                   📋 ทำเช็คลิสต์ 12 ข้อต่อ
                 </button>
                 <button onclick="showResult('low')" class="btn-glass-outline" style="flex:1;font-size:12px;padding:10px;background:white;color:#7c4010;" id="btn-lowrisk-skip">
@@ -1577,11 +1983,11 @@ body.dark-mode #ex-modal div[style*="background:rgba(255,255,255"] { background:
           </button>
         </div>
 
-        <div class="glass-tab-bar" style="margin-bottom:14px;">
-          <button class="glass-tab active" onclick="showTest(0)" id="test-tab-0">ลุก-นั่ง</button>
-          <button class="glass-tab" onclick="showTest(1)" id="test-tab-1">TUG เดิน</button>
-          <button class="glass-tab" onclick="showTest(2)" id="test-tab-2">ทรงตัว 4 ท่า</button>
-          <button class="glass-tab" onclick="showTest(3)" id="test-tab-3">ลุกจากพื้น</button>
+        <div class="glass-tab-bar test-tab-bar" style="margin-bottom:14px;">
+          <button class="glass-tab test-tab active" onclick="showTest(0)" id="test-tab-0">ลุก-นั่ง</button>
+          <button class="glass-tab test-tab" onclick="showTest(1)" id="test-tab-1">TUG เดิน</button>
+          <button class="glass-tab test-tab" onclick="showTest(2)" id="test-tab-2">ทรงตัว 4 ท่า</button>
+          <button class="glass-tab test-tab" onclick="showTest(3)" id="test-tab-3">ลุกจากพื้น</button>
         </div>
 
         <!-- Chair Stand -->
@@ -2690,37 +3096,141 @@ body.dark-mode #ex-modal div[style*="background:rgba(255,255,255"] { background:
   </div>
 </div>
 
+<!-- ══════════════════════ FONT SIZE ADJUSTMENT MODAL (5 LEVELS) ══════════════════════ -->
+<div id="modal-font-size" class="modal-overlay" style="display:none;" onclick="if(event.target===this)closeFontSizeModal()">
+  <div class="modal-box" style="max-height:88vh;overflow-y:auto;padding:22px;max-width:410px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+      <div style="font-size:17px;font-weight:700;color:#5a3510;" id="modal-font-title">🔤 ปรับขนาดตัวอักษร (5 ระดับ)</div>
+      <button onclick="closeFontSizeModal()" style="border:none;background:none;font-size:22px;cursor:pointer;color:#7c4010;">✕</button>
+    </div>
+
+    <div style="font-size:12.5px;color:#7c4010;margin-bottom:14px;line-height:1.6;" id="modal-font-sub">
+      เลือกขนาดตัวอักษรที่อ่านง่าย สบายตาที่สุดสำหรับผู้สูงอายุและผู้ดูแล
+    </div>
+
+    <!-- Live Preview Box -->
+    <div class="font-preview-box" style="border-radius:16px;padding:14px;margin-bottom:14px;text-align:center;">
+      <div style="font-size:11.5px;color:#c2410c;font-weight:700;margin-bottom:4px;text-transform:uppercase;">ตัวอย่างการแสดงผลจริง</div>
+      <div id="font-preview-sample" style="font-size:15px;font-weight:700;line-height:1.6;transition:font-size .2s ease;">
+        "ข้อที่ 1/3 ใน 1 ปีที่ผ่านมา คุณเคยหกล้มหรือไม่?"
+      </div>
+    </div>
+
+    <!-- Stepper Controls -->
+    <div class="font-stepper-wrap" style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:14px;border-radius:14px;padding:8px 12px;">
+      <button type="button" onclick="stepFontLevel(-1)" class="btn-glass-outline" style="min-height:38px;padding:6px 14px;font-size:13px;font-weight:700;flex:1;">
+        ➖ เล็กลง
+      </button>
+      <div style="font-size:14px;font-weight:700;text-align:center;flex:1;" id="font-stepper-text">
+        ระดับ <span id="font-stepper-num">1</span> / 5
+      </div>
+      <button type="button" onclick="stepFontLevel(1)" class="btn-glass-primary" style="min-height:38px;padding:6px 14px;font-size:13px;font-weight:700;flex:1;">
+        ➕ ใหญ่ขึ้น
+      </button>
+    </div>
+
+    <!-- 5 Level Cards -->
+    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:16px;">
+      <div id="font-opt-1" class="font-opt-card" onclick="setFontLevel(1)" style="cursor:pointer;padding:10px 14px;border-radius:14px;display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <div class="font-opt-title" style="font-weight:700;font-size:14px;">1. ปกติ (100%)</div>
+          <div class="font-opt-sub" style="font-size:11.5px;">ขนาดมาตรฐานทั่วไป</div>
+        </div>
+        <span class="font-opt-badge" style="font-size:16px;font-weight:700;padding:2px 8px;border-radius:8px;">ก</span>
+      </div>
+
+      <div id="font-opt-2" class="font-opt-card" onclick="setFontLevel(2)" style="cursor:pointer;padding:10px 14px;border-radius:14px;display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <div class="font-opt-title" style="font-weight:700;font-size:15px;">2. ปานกลาง (110%)</div>
+          <div class="font-opt-sub" style="font-size:12px;">ตัวอักษรใหญ่ขึ้นเล็กน้อย อ่านสบายตา</div>
+        </div>
+        <span class="font-opt-badge" style="font-size:17.5px;font-weight:700;padding:2px 8px;border-radius:8px;">ก+</span>
+      </div>
+
+      <div id="font-opt-3" class="font-opt-card" onclick="setFontLevel(3)" style="cursor:pointer;padding:10px 14px;border-radius:14px;display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <div class="font-opt-title" style="font-weight:700;font-size:16.5px;">3. ขนาดใหญ่ (122%) ⭐ แนะนำ</div>
+          <div class="font-opt-sub" style="font-size:12.5px;">เหมาะสำหรับผู้สูงอายุ 60 ปีขึ้นไป</div>
+        </div>
+        <span class="font-opt-badge" style="font-size:19.5px;font-weight:700;padding:2px 8px;border-radius:8px;">ก++</span>
+      </div>
+
+      <div id="font-opt-4" class="font-opt-card" onclick="setFontLevel(4)" style="cursor:pointer;padding:10px 14px;border-radius:14px;display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <div class="font-opt-title" style="font-weight:700;font-size:18px;">4. ใหญ่พิเศษ (135%)</div>
+          <div class="font-opt-sub" style="font-size:13px;">ตัวโต ชัดเจน เหมาะกับผู้มีสายตายาว</div>
+        </div>
+        <span class="font-opt-badge" style="font-size:21.5px;font-weight:700;padding:2px 8px;border-radius:8px;">ก+++</span>
+      </div>
+
+      <div id="font-opt-5" class="font-opt-card" onclick="setFontLevel(5)" style="cursor:pointer;padding:10px 14px;border-radius:14px;display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <div class="font-opt-title" style="font-weight:700;font-size:20px;">5. ขนาดจัมโบ้ (150%) 🔍</div>
+          <div class="font-opt-sub" style="font-size:13.5px;">ใหญ่ที่สุด ชัดเต็มตาทุกเมนู</div>
+        </div>
+        <span class="font-opt-badge" style="font-size:24px;font-weight:700;padding:2px 8px;border-radius:8px;">จัมโบ้</span>
+      </div>
+    </div>
+
+    <button onclick="closeFontSizeModal()" class="btn-glass-primary" style="min-height:46px;font-size:14px;font-weight:700;">
+      ✅ บันทึกและปิด (เสร็จสิ้น)
+    </button>
+  </div>
+</div>
+
 <!-- ══════════════════════ PRIVACY POLICY MODAL ══════════════════════ -->
 <div id="modal-privacy" class="modal-overlay" style="display:none;" onclick="if(event.target===this)closePrivacyModal()">
-  <div class="modal-box" style="max-height:85vh;overflow-y:auto;">
+  <div class="modal-box" style="max-height:85vh;overflow-y:auto;padding:22px;">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
-      <div style="font-size:16px;font-weight:700;color:#5a3510;" id="modal-privacy-title">🔒 นโยบายความเป็นส่วนตัว</div>
+      <div style="font-size:16px;font-weight:700;color:#5a3510;" id="modal-privacy-title">🔒 นโยบายความเป็นส่วนตัวและธรรมาภิบาลข้อมูล</div>
       <button onclick="closePrivacyModal()" style="border:none;background:none;font-size:20px;cursor:pointer;color:#7c4010;">✕</button>
     </div>
     
     <div style="font-size:12px;color:#7c4010;line-height:1.7;display:flex;flex-direction:column;gap:12px;">
-      <div style="background:rgba(220,252,231,.7);border:1px solid rgba(34,197,94,.4);border-radius:12px;padding:10px 12px;font-weight:600;color:#166534;">
-        🛡️ รับรองมาตรฐาน PDPA ประเทศไทย และสอดคล้องกับแนวทาง HIPAA
+      <div style="background:rgba(220,252,231,.75);border:1px solid rgba(34,197,94,.4);border-radius:14px;padding:12px 14px;color:#166534;">
+        <div style="font-weight:700;font-size:13px;margin-bottom:3px;">🛡️ นโยบายการคุ้มครองข้อมูลส่วนบุคคลและข้อมูลสุขภาพ (Privacy Notice)</div>
+        <div style="font-size:11.5px;line-height:1.6;color:#14532d;">ระบบเต็มก้าว (FULLSTEP) ได้รับการออกแบบตามหลักการคุ้มครองข้อมูลส่วนบุคคล (PDPA) และแนวทางความปลอดภัยข้อมูลสุขภาพสากล (HIPAA Security Principles) ด้วยสถาปัตยกรรมแบบ <strong>Local-First</strong> (ประมวลผลบนเครื่องผู้ใช้เป็นหลัก) เพื่อความโปร่งใสและตรวจสอบได้ตามรายการ 8 ด้าน ดังนี้:</div>
       </div>
 
-      <div>
-        <strong style="color:#5a3510;">1. การจัดเก็บข้อมูลภายในอุปกรณ์ (Local-First):</strong>
-        <div>ข้อมูลสุขภาพ น้ำหนัก ส่วนสูง ผลการประเมิน 3KQ และสถิติสมรรถภาพทางกายทั้งหมด ถูกบันทึกไว้ภายในหน่วยความจำของอุปกรณ์ท่านเป็นหลัก</div>
+      <!-- 8-Point Checklist Cards -->
+      <div style="background:rgba(255,255,255,.6);border:1px solid rgba(220,180,120,.25);border-radius:12px;padding:10px 12px;">
+        <div style="font-weight:700;color:#5a3510;display:flex;align-items:center;gap:6px;">📍 1. ข้อมูลอยู่ที่ไหน (Data Storage & Location)</div>
+        <div style="font-size:11.5px;color:#7c4010;margin-top:2px;">• <strong>ในอุปกรณ์ (Local Storage):</strong> ข้อมูลโปรไฟล์และประวัติการประเมินถูกจัดเก็บในหน่วยความจำของอุปกรณ์นี้เท่านั้น สามารถใช้งานออฟไลน์ได้โดยไม่ต้องต่อเน็ต<br>• <strong>บนคลาวด์งานวิจัย (Google Sheets):</strong> ส่งข้อมูลเฉพาะเมื่อผู้ดูแลระบบ (Admin) กดซิงค์ หรือเมื่อได้รับความยินยอม และมีโหมดปิดบังตัวตน (De-identification)<br>• <strong>ระบบชุมชน (Community):</strong> จัดเก็บเฉพาะข้อความคำแนะนำทั่วไปที่ผู้ใช้เลือกแชร์สาธารณะ</div>
       </div>
 
-      <div>
-        <strong style="color:#5a3510;">2. ไม่มีการจำหน่ายข้อมูลส่วนบุคคล:</strong>
-        <div>เราไม่มีนโยบายส่งต่อ จำหน่าย หรือเปิดเผยข้อมูลสุขภาพของท่านให้กับบริษัทประกัน ตัวแทนโฆษณา หรือบุคคลภายนอกโดยเด็ดขาด</div>
+      <div style="background:rgba(255,255,255,.6);border:1px solid rgba(220,180,120,.25);border-radius:12px;padding:10px 12px;">
+        <div style="font-weight:700;color:#5a3510;display:flex;align-items:center;gap:6px;">📋 2. เก็บข้อมูลอะไรบ้าง (Data Collected)</div>
+        <div style="font-size:11.5px;color:#7c4010;margin-top:2px;">• ข้อมูลทั่วไป: ชื่อ-นามสกุล (หรือนามแฝง), อายุ, เพศ, วันเกิด, เบอร์โทรศัพท์, ข้อมูลผู้ดูแล<br>• ข้อมูลสุขภาพ: น้ำหนัก, ส่วนสูง, BMI, โรคประจำตัว, ยาประจำตัว, อาการเสี่ยง<br>• ข้อมูลการประเมิน: ผลคัดกรอง 3 ข้อ (3KQ), แบบประเมินตนเอง 12 ข้อ, เวลา TUG, ลุกนั่ง 30 วิ, ท่าทรงตัว 4 ท่า, ลุกจากพื้น (BESTest)</div>
       </div>
 
-      <div>
-        <strong style="color:#5a3510;">3. การใช้งานสิทธิ์และอุปกรณ์:</strong>
-        <div>ระบบการจับเวลาและการอ่านออกเสียงทำงานภายในเครื่อง เพื่ออำนวยความสะดวกให้ผู้สูงอายุและผู้ดูแลเท่านั้น</div>
+      <div style="background:rgba(255,255,255,.6);border:1px solid rgba(220,180,120,.25);border-radius:12px;padding:10px 12px;">
+        <div style="font-weight:700;color:#5a3510;display:flex;align-items:center;gap:6px;">🎯 3. เก็บไปเพื่ออะไร (Purpose of Processing)</div>
+        <div style="font-size:11.5px;color:#7c4010;margin-top:2px;">• ประเมินความเสี่ยงหกล้มเฉพาะบุคคลและออกแบบแผนการฝึกกายภาพบำบัดที่ปลอดภัย<br>• ติดตามแนวโน้มสมรรถภาพทางกาย (Health Trends) เปรียบเทียบผลก่อน-หลังฝึก<br>• วิเคราะห์ข้อมูลสถิติเพื่อการศึกษาวิจัยและพัฒนาคุณภาพบริการทางกายภาพบำบัด</div>
       </div>
 
-      <div>
-        <strong style="color:#5a3510;">4. สิทธิในการควบคุมข้อมูล:</strong>
-        <div>ผู้ใช้งานสามารถแก้ไข หรือล้างประวัติการทดสอบออกจากเครื่องได้ตลอดเวลาผ่านเมนูจัดการประวัติ</div>
+      <div style="background:rgba(255,255,255,.6);border:1px solid rgba(220,180,120,.25);border-radius:12px;padding:10px 12px;">
+        <div style="font-weight:700;color:#5a3510;display:flex;align-items:center;gap:6px;">⚖️ 4. มีฐานกฎหมายอะไร (Lawful Basis)</div>
+        <div style="font-size:11.5px;color:#7c4010;margin-top:2px;">• <strong>ฐานความยินยอมโดยชัดแจ้ง (Explicit Consent)</strong> ตาม พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (PDPA) มาตรา 26 สำหรับข้อมูลสุขภาพ และเพื่อการศึกษาวิจัยทางวิทยาศาสตร์หรือสถิติ</div>
+      </div>
+
+      <div style="background:rgba(255,255,255,.6);border:1px solid rgba(220,180,120,.25);border-radius:12px;padding:10px 12px;">
+        <div style="font-weight:700;color:#5a3510;display:flex;align-items:center;gap:6px;">👥 5. ใครเห็นข้อมูลได้ (Access Control)</div>
+        <div style="font-size:11.5px;color:#7c4010;margin-top:2px;">• <strong>ผู้รับการประเมินและผู้ดูแล:</strong> เข้าถึงข้อมูลบนอุปกรณ์ของตนเองได้เต็มรูปแบบ<br>• <strong>ผู้ดูแลระบบ / ทีมวิจัย (Admin):</strong> เข้าถึงได้เฉพาะเมื่อล็อกอินด้วยรหัสผ่านเจ้าหน้าที่<br>• <strong>ผู้ใช้ทั่วไปในชุมชน:</strong> ไม่สามารถเห็นข้อมูลสุขภาพส่วนบุคคล จะเห็นเฉพาะข้อความคำแนะนำทั่วไปที่เลือกแชร์เท่านั้น</div>
+      </div>
+
+      <div style="background:rgba(255,255,255,.6);border:1px solid rgba(220,180,120,.25);border-radius:12px;padding:10px 12px;">
+        <div style="font-weight:700;color:#5a3510;display:flex;align-items:center;gap:6px;">🔐 6. ข้อมูลปลอดภัยอย่างไร (Security Safeguards)</div>
+        <div style="font-size:11.5px;color:#7c4010;margin-top:2px;">• รับส่งข้อมูลผ่านการเข้ารหัส HTTPS ตามมาตรฐานความปลอดภัยสากล<br>• มีระบบ <strong>PDPA De-identification</strong> ซ่อนชื่อและเบอร์โทรเป็นรหัสวิจัย (PID) เมื่อส่งออกข้อมูล<br>• ไม่มีการส่งข้อมูลไปยังบุคคลภายนอก บริษัทประกัน หรือการโฆษณา</div>
+      </div>
+
+      <div style="background:rgba(255,255,255,.6);border:1px solid rgba(220,180,120,.25);border-radius:12px;padding:10px 12px;">
+        <div style="font-weight:700;color:#5a3510;display:flex;align-items:center;gap:6px;">🗑️ 7. ลบข้อมูลได้จริงไหม (Right to Erasure)</div>
+        <div style="font-size:11.5px;color:#7c4010;margin-top:2px;">• สามารถกดปุ่ม <strong>"ล้างข้อมูลทั้งหมด"</strong> ในหน้าโปรไฟล์เพื่อลบข้อมูลทั้งหมดออกจากอุปกรณ์ทันที<br>• หากต้องการลบข้อมูลในฐานข้อมูลวิจัย สามารถแจ้งรหัส PID หรือชื่อกับผู้ดูแลระบบเพื่อลบข้อมูลออกจากเซิร์ฟเวอร์ได้ตลอดเวลา</div>
+      </div>
+
+      <div style="background:rgba(255,255,255,.6);border:1px solid rgba(220,180,120,.25);border-radius:12px;padding:10px 12px;">
+        <div style="font-weight:700;color:#5a3510;display:flex;align-items:center;gap:6px;">👨‍⚕️ 8. มีผู้รับผิดชอบหรือไม่ (Data Controller & Contact)</div>
+        <div style="font-size:11.5px;color:#7c4010;margin-top:2px;">• ผู้ควบคุมข้อมูล: คณะทำงานและทีมวิจัยกายภาพบำบัดป้องกันการหกล้ม เต็มก้าว (FULLSTEP)<br>• ช่องทางติดต่อ: โรงพยาบาล / หน่วยกายภาพบำบัดผู้รับผิดชอบโครงการวิจัย หรือผ่านปุ่ม "ติดต่อผู้พัฒนา" ในแอปพลิเคชัน</div>
       </div>
     </div>
 
@@ -2909,14 +3419,14 @@ var EXERCISE_IMAGES = window.EXERCISE_IMAGES = {
 // ─── STATE MANAGEMENT ─────────────────────────────────────────────────
 const state = {
   user: {
-    avatar: '👵',
-    baseAvatar: '👵',
+    avatar: '🙂',
+    baseAvatar: '🙂',
     skinTone: '',
     avatarPhoto: null,
-    coverage: 'สิทธิบัตรทอง',
+    coverage: '',
     name: 'ผู้ใช้งานใหม่',
-    gender: 'หญิง',
-    age: 65,
+    gender: '',
+    age: '',
     weight: '',
     height: '',
     dobDay: '1',
@@ -2965,6 +3475,7 @@ const state = {
   exTimerRunning: false,
   hazardChecked: {},
   theme: 'light',
+  fontLevel: 1,
   language: 'th',
   starRating: 5,
   donateAmount: 35
@@ -3286,6 +3797,92 @@ function setAppTheme(theme) {
   }
 }
 
+// ─── 5-LEVEL ELDERLY FONT SIZE CONTROLS ─────────────────────────────
+const FONT_LEVELS = {
+  1: { id: 1, name: 'ปกติ (100%)', badge: 'ก', previewSize: '15px', desc: 'ขนาดมาตรฐานทั่วไป' },
+  2: { id: 2, name: 'ปานกลาง (110%)', badge: 'ก+', previewSize: '16.5px', desc: 'ตัวอักษรใหญ่ขึ้นเล็กน้อย อ่านสบายตา' },
+  3: { id: 3, name: 'ขนาดใหญ่ (122%) ⭐', badge: 'ก++', previewSize: '18.5px', desc: 'เหมาะสำหรับผู้สูงอายุ 60 ปีขึ้นไป' },
+  4: { id: 4, name: 'ใหญ่พิเศษ (135%)', badge: 'ก+++', previewSize: '21px', desc: 'ตัวโต ชัดเจน เหมาะกับผู้มีสายตายาว' },
+  5: { id: 5, name: 'ขนาดจัมโบ้ (150%) 🔍', badge: 'จัมโบ้', previewSize: '24px', desc: 'ใหญ่ที่สุด ชัดเต็มตาทุกเมนู' }
+};
+
+function setFontLevel(lvl, showToastNotify = true) {
+  lvl = parseInt(lvl, 10);
+  if (isNaN(lvl) || lvl < 1) lvl = 1;
+  if (lvl > 5) lvl = 5;
+
+  state.fontLevel = lvl;
+  try {
+    localStorage.setItem('fullstep_font_level', lvl.toString());
+  } catch(e) {}
+
+  // Update body classes for 5-level styling
+  document.body.classList.remove('font-lvl-1', 'font-lvl-2', 'font-lvl-3', 'font-lvl-4', 'font-lvl-5');
+  document.body.classList.add('font-lvl-' + lvl);
+
+  // Update Top Bar Quick Indicator
+  const topLvlSpan = document.getElementById('top-btn-font-lvl');
+  if (topLvlSpan) {
+    topLvlSpan.textContent = FONT_LEVELS[lvl].badge;
+  }
+
+  // Update Settings Profile Label
+  const settingFontLabel = document.getElementById('setting-font-lvl-label');
+  if (settingFontLabel) {
+    settingFontLabel.textContent = FONT_LEVELS[lvl].name;
+  }
+
+  // Update Stepper Number in Modal
+  const stepperNum = document.getElementById('font-stepper-num');
+  if (stepperNum) {
+    stepperNum.textContent = lvl;
+  }
+
+  // Update Modal Preview Box
+  const previewSample = document.getElementById('font-preview-sample');
+  if (previewSample) {
+    previewSample.style.fontSize = FONT_LEVELS[lvl].previewSize;
+  }
+
+  // Highlight Active Option Card in Modal (Class-based for seamless Light/Dark themes)
+  for (let i = 1; i <= 5; i++) {
+    const card = document.getElementById('font-opt-' + i);
+    if (card) {
+      card.classList.toggle('active', i === lvl);
+      card.style.background = '';
+      card.style.borderColor = '';
+      card.style.boxShadow = '';
+    }
+  }
+
+  if (showToastNotify && typeof showToast === 'function') {
+    showToast('🔤 ปรับขนาดอักษรเป็น: ' + FONT_LEVELS[lvl].name);
+  }
+}
+
+function stepFontLevel(delta) {
+  const current = state.fontLevel || 1;
+  let next = current + delta;
+  if (next < 1) next = 1;
+  if (next > 5) next = 5;
+  setFontLevel(next, true);
+}
+
+function openFontSizeModal() {
+  const modal = document.getElementById('modal-font-size');
+  if (modal) {
+    modal.style.display = 'flex';
+    setFontLevel(state.fontLevel || 1, false);
+  }
+}
+
+function closeFontSizeModal() {
+  const modal = document.getElementById('modal-font-size');
+  if (modal) {
+    modal.style.display = 'none';
+  }
+}
+
 // ─── INTERNATIONALIZATION (i18n) DICTIONARY ──────────────────────────
 const i18n = {
   th: {
@@ -3353,6 +3950,8 @@ const i18n = {
     btnYes: '✅ ใช่',
     btnNo: '❌ ไม่ใช่',
     kqLowriskTitle: 'ยินดีด้วย! 3KQ บ่งชี้ความเสี่ยงต่ำ (ปลอดภัย)',
+    kqCompleteNotice: 'ตอบคำถามคัดกรอง 3 ข้อครบถ้วนแล้ว',
+    floorUntestedDesc: 'ผู้รับการประเมินไม่ได้ทดสอบหรือเลือกข้ามการทดสอบท่าลุกขึ้นจากพื้น (BESTest Item 5) ในรอบนี้',
     kqLowriskDesc: 'คุณไม่มีประวัติล้มและไม่มีอาการเซเบื้องต้น สามารถเลือกทดสอบสมรรถภาพ 4 ท่าเพื่อวัดความฟิตของกล้ามเนื้อขาและการทรงตัว หรือจะข้ามไปดูสรุปผลเลยก็ได้ครับ',
     btnLowriskPhys: '💪 ทดสอบสมรรถภาพ 4 ท่าต่อ (มี Timer จับเวลา) →',
     btnLowrisk12q: '📋 ทำเช็คลิสต์ 12 ข้อต่อ',
@@ -3652,6 +4251,8 @@ const i18n = {
     btnYes: '✅ Yes',
     btnNo: '❌ No',
     kqLowriskTitle: 'Great! 3KQ indicates Low Risk (Safe)',
+    kqCompleteNotice: 'All 3 screening questions completed',
+    floorUntestedDesc: 'The participant did not perform or chose to skip the floor rise test (BESTest Item 5).',
     kqLowriskDesc: 'No history of falls or unsteadiness found. You can proceed with the 4 physical performance tests or skip directly to your summary.',
     btnLowriskPhys: '💪 4 Physical Tests (with Timer) →',
     btnLowrisk12q: '📋 12-Item Checklist',
@@ -3951,6 +4552,8 @@ const i18n = {
     btnYes: '✅ 是的',
     btnNo: '❌ 否',
     kqLowriskTitle: '恭喜！3KQ筛查显示为低风险（安全）',
+    kqCompleteNotice: '3项快速筛查已全部完成',
+    floorUntestedDesc: '受评者未进行或选择跳过了从地面起立测试 (BESTest Item 5)。',
     kqLowriskDesc: '您近期没有跌倒史且步态稳健。您可以继续进行4项身体功能测试，或直接跳过查看总结。',
     btnLowriskPhys: '💪 继续4项体力与平衡测试（带计时器）→',
     btnLowrisk12q: '📋 继续12项自评量表',
@@ -4250,6 +4853,8 @@ const i18n = {
     btnYes: '✅ はい',
     btnNo: '❌ いいえ',
     kqLowriskTitle: '安心です！3KQ判定は低リスク（安全水準）です',
+    kqCompleteNotice: '3つの質問への回答が完了しました',
+    floorUntestedDesc: 'この回では床からの立ち上がりテスト（BESTest Item 5）を実施しなかったか、スキップしました。',
     kqLowriskDesc: '転倒歴や歩行のふらつきは見られませんでした。4種の運動機能テストへ進むか、結果サマリーへスキップできます。',
     btnLowriskPhys: '💪 4種の体力・バランス測定へ進む（タイマー付）→',
     btnLowrisk12q: '📋 12項目の自己チェックへ進む',
@@ -7195,14 +7800,14 @@ function executeClearAllData() {
     state.caregivers = [];
     state.selectedRecordId = null;
     state.user = {
-      avatar: '👵',
-      baseAvatar: '👵',
+      avatar: '🙂',
+      baseAvatar: '🙂',
       skinTone: '',
       avatarPhoto: null,
-      coverage: 'สิทธิบัตรทอง',
+      coverage: '',
       name: 'ผู้ใช้งานใหม่',
-      gender: 'หญิง',
-      age: 65,
+      gender: '',
+      age: '',
       weight: '',
       height: '',
       dobDay: '1',
@@ -7272,7 +7877,7 @@ function openPersonalRegisterScreen() {
   const nameIn = document.getElementById('reg-name');
   if (nameIn) nameIn.value = isDefaultName ? '' : u.name;
   const ageIn = document.getElementById('reg-age');
-  if (ageIn) ageIn.value = u.age || 65;
+  if (ageIn) ageIn.value = u.age || '';
   const genderSel = document.getElementById('reg-gender');
   if (genderSel) genderSel.value = (u.gender === 'ชาย' || u.gender === 'Male') ? 'ชาย' : 'หญิง';
   const covSel = document.getElementById('reg-coverage');
@@ -7383,7 +7988,7 @@ function handleLogin() {
 function handleRegister() {
   const name = (document.getElementById('reg-name') ? document.getElementById('reg-name').value : '').trim();
   const phone = (document.getElementById('reg-phone') ? document.getElementById('reg-phone').value : '').trim();
-  const age = parseInt(document.getElementById('reg-age') ? document.getElementById('reg-age').value : '65', 10) || 65;
+  const age = parseInt(document.getElementById('reg-age') ? document.getElementById('reg-age').value : '', 10) || '';
   const gender = document.getElementById('reg-gender') ? document.getElementById('reg-gender').value : 'หญิง';
   const coverage = document.getElementById('reg-coverage') ? document.getElementById('reg-coverage').value : (state.user.coverage || 'สิทธิบัตรทอง');
   const weight = (document.getElementById('reg-weight') ? document.getElementById('reg-weight').value : '').trim();
@@ -7629,7 +8234,8 @@ function updateProfileDisplay() {
   }
   const profName = document.getElementById('prof-display-name');
   if(profName) profName.textContent = displayName;
-  const covLabel = getCoverageLabel(u.coverage || 'สิทธิบัตรทอง', lang);
+  const covUnsetLbl = { th: 'ยังไม่ระบุสิทธิการรักษา', en: 'Coverage not set', zh: '未设置医保', ja: '保険未設定' }[lang] || 'ยังไม่ระบุสิทธิการรักษา';
+  const covLabel = u.coverage ? getCoverageLabel(u.coverage, lang) : covUnsetLbl;
   const profCoverageBadge = document.getElementById('prof-display-coverage');
   if(profCoverageBadge) profCoverageBadge.textContent = `🏥 ${covLabel} ▾`;
   const profViewCoverage = document.getElementById('prof-view-coverage');
@@ -7820,7 +8426,15 @@ function loadRecordsFromStorage() {
     if(saved) {
       const parsed = JSON.parse(saved);
       if(Array.isArray(parsed)) {
-        state.records = parsed;
+        state.records = parsed.map(r => {
+          if(!r.balancePassed || r.balancePassed === '-' || r.balancePassed.includes('ไม่ได้ทดสอบ') || r.balancePassed.includes('ข้าม') || (r.chair === '-' && r.tug === '-' && !r.balancePassed.includes('/'))) {
+            r.balancePassed = 'ไม่ได้ทดสอบ';
+          }
+          if(!r.floorRise || r.floorRise === '-' || r.floorRise.includes('ไม่ได้ทดสอบ') || r.floorRise.includes('ข้าม') || r.floorScore === '' || r.floorScore === null || r.floorScore === undefined) {
+            r.floorRise = 'ไม่ได้ทดสอบ (ข้าม)';
+          }
+          return r;
+        });
       }
     }
   } catch(e) {}
@@ -8002,6 +8616,9 @@ function initCommunityNotes(forceReset = false) {
         if (Array.isArray(parsed) && parsed.length > 0) {
           state.communityNotes = parsed;
           renderCommunityNotes();
+          if (typeof navigator !== 'undefined' && navigator.onLine !== false) {
+            setTimeout(() => { fetchCommunityNotesFromCloud(false); }, 1200);
+          }
           return;
         }
       }
@@ -8010,12 +8627,111 @@ function initCommunityNotes(forceReset = false) {
   state.communityNotes = JSON.parse(JSON.stringify(defaultSharedCommunityNotes));
   saveCommunityNotesToStorage();
   renderCommunityNotes();
+  if (typeof navigator !== 'undefined' && navigator.onLine !== false) {
+    setTimeout(() => { fetchCommunityNotesFromCloud(false); }, 1200);
+  }
 }
 
 function saveCommunityNotesToStorage() {
   try {
     localStorage.setItem('fullstep_community_notes', JSON.stringify(state.communityNotes));
   } catch(e) {}
+}
+
+async function fetchCommunityNotesFromCloud(showNotify = false) {
+  const gasUrl = (typeof getGoogleSheetsUrl === 'function') ? getGoogleSheetsUrl() : '';
+  if (!gasUrl || !gasUrl.startsWith('https://script.google.com/')) {
+    if (showNotify && typeof showToast === 'function') {
+      showToast('⚠️ ยังไม่ได้เชื่อมต่อ URL Google Sheets ในเมนูตั้งค่า');
+    }
+    return false;
+  }
+  if (typeof navigator !== 'undefined' && navigator.onLine === false) {
+    if (showNotify && typeof showToast === 'function') {
+      showToast('🟠 ทำงานในโหมดออฟไลน์: ไม่สามารถดึงโน้ตจากคลาวด์ได้');
+    }
+    return false;
+  }
+
+  const refreshBtn = document.getElementById('comm-btn-refresh-text');
+  if (refreshBtn) refreshBtn.textContent = 'กำลังโหลด...';
+
+  try {
+    const fetchUrl = gasUrl + (gasUrl.includes('?') ? '&' : '?') + 'action=get_community_notes&_t=' + Date.now();
+    const resp = await fetch(fetchUrl, { method: 'GET' });
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const data = await resp.json();
+
+    if (data && data.status === 'ok' && Array.isArray(data.notes)) {
+      mergeCloudCommunityNotes(data.notes);
+      if (showNotify && typeof showToast === 'function') {
+        const count = data.notes.length;
+        showToast('🔄 อัปเดตโน้ตจากชุมชนเรียบร้อยแล้ว (' + count + ' ข้อความ)');
+      }
+      return true;
+    }
+  } catch (err) {
+    console.warn('fetchCommunityNotesFromCloud error:', err);
+    if (showNotify && typeof showToast === 'function') {
+      showToast('⚠️ ไม่สามารถเชื่อมต่อฐานข้อมูลโน้ตชุมชนได้ในขณะนี้');
+    }
+  } finally {
+    if (refreshBtn) refreshBtn.textContent = 'รีเฟรช';
+  }
+  return false;
+}
+
+function mergeCloudCommunityNotes(cloudNotes) {
+  if (!Array.isArray(cloudNotes)) return;
+
+  const localMap = new Map();
+  (state.communityNotes || []).forEach(n => {
+    if (n && n.id) localMap.set(n.id, n);
+  });
+
+  const mergedList = [];
+  const processedIds = new Set();
+
+  // 1. Process incoming cloud notes
+  cloudNotes.forEach(cloudNote => {
+    if (!cloudNote || !cloudNote.id) return;
+    processedIds.add(cloudNote.id);
+    const local = localMap.get(cloudNote.id);
+
+    if (local) {
+      // Preserve local ownership & user reactions
+      mergedList.push({
+        ...cloudNote,
+        isMine: !!local.isMine,
+        userHearted: !!local.userHearted,
+        userThoughtTwice: !!local.userThoughtTwice,
+        // Admin moderation from cloud takes priority
+        hiddenByAdmin: cloudNote.hiddenByAdmin !== undefined ? !!cloudNote.hiddenByAdmin : !!local.hiddenByAdmin,
+        hearts: Math.max(local.hearts || 0, cloudNote.hearts || 0),
+        thinkTwice: Math.max(local.thinkTwice || 0, cloudNote.thinkTwice || 0)
+      });
+    } else {
+      // New note shared by someone else in the community
+      mergedList.push({
+        ...cloudNote,
+        isMine: false,
+        userHearted: false,
+        userThoughtTwice: false,
+        hiddenByAdmin: !!cloudNote.hiddenByAdmin
+      });
+    }
+  });
+
+  // 2. Keep local user's own private notes and local notes not yet synced to cloud
+  (state.communityNotes || []).forEach(local => {
+    if (local && local.id && !processedIds.has(local.id)) {
+      mergedList.push(local);
+    }
+  });
+
+  state.communityNotes = mergedList;
+  saveCommunityNotesToStorage();
+  renderCommunityNotes();
 }
 
 function toggleCommunityNoteForm() {
@@ -8160,7 +8876,26 @@ function deleteCommunityNote(noteId) {
   state.communityNotes = (state.communityNotes || []).filter(n => n.id !== noteId);
   saveCommunityNotesToStorage();
   renderCommunityNotes();
+  if (typeof syncPayloadToGoogleSheets === 'function') {
+    syncPayloadToGoogleSheets('delete_note', { noteId: noteId });
+  }
   showToast({ th: 'ลบโน้ตเรียบร้อยแล้ว 🗑️', en: 'Note deleted 🗑️', zh: '笔记已删除 🗑️', ja: 'メモを削除しました 🗑️' }[lang] || 'Deleted 🗑️');
+}
+
+function toggleAdminHideCommunityNote(noteId) {
+  const note = (state.communityNotes || []).find(n => n.id === noteId);
+  if (!note) return;
+  note.hiddenByAdmin = !note.hiddenByAdmin;
+  saveCommunityNotesToStorage();
+  renderCommunityNotes();
+  const lang = state.language || 'th';
+  if (typeof syncPayloadToGoogleSheets === 'function') {
+    syncPayloadToGoogleSheets('toggle_hide_note', { noteId: note.id, isHidden: !!note.hiddenByAdmin });
+  }
+  const msg = note.hiddenByAdmin
+    ? { th: '👁️‍🗨️ ซ่อนโน้ตนี้จากผู้ใช้งานทั่วไปแล้ว (Admin Mode)', en: '👁️‍🗨️ Note hidden from public (Admin Mode)', zh: '👁️‍🗨️ 已对普通用户隐藏该笔记', ja: '👁️‍🗨️ このメモを一般公開から非表示にしました' }[lang]
+    : { th: '🌐 ยกเลิกการซ่อน - แสดงโน้ตนี้ในชุมชนตามปกติแล้ว', en: '🌐 Note unhidden and visible to community', zh: '🌐 已恢复显示该笔记', ja: '🌐 このメモを再表示しました' }[lang];
+  showToast(msg);
 }
 
 function shareCommunityNote(noteId) {
@@ -8190,8 +8925,10 @@ function renderCommunityNotes() {
   const container = document.getElementById('community-notes-list');
   if (!container) return;
   const lang = state.language || 'th';
+  const isAdmin = typeof isAdminAuthenticated === 'function' && isAdminAuthenticated();
   const notes = (state.communityNotes || []).filter(n => {
     if (state.communityNoteFilter === 'mine') return !!n.isMine;
+    if (n.hiddenByAdmin && !isAdmin) return false;
     return n.isPublic || n.isMine;
   });
 
@@ -8277,7 +9014,12 @@ function renderCommunityNotes() {
     const safeAuthor = String(rawAuthor).replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
     return `
-      <div style="background:rgba(255,255,255,.82);border:${hasCaution ? '1.5px solid rgba(245,158,11,.65)' : '1px solid rgba(220,180,120,.35)'};border-radius:14px;padding:11px 12px;box-shadow:0 2px 8px rgba(120,70,15,.05);">
+      <div style="background:${n.hiddenByAdmin ? 'rgba(254,242,242,.85)' : 'rgba(255,255,255,.82)'};border:${n.hiddenByAdmin ? '1.5px dashed #ef4444' : (hasCaution ? '1.5px solid rgba(245,158,11,.65)' : '1px solid rgba(220,180,120,.35)')};border-radius:14px;padding:11px 12px;box-shadow:0 2px 8px rgba(120,70,15,.05);position:relative;">
+        ${n.hiddenByAdmin ? `
+          <div style="display:inline-flex;align-items:center;gap:4px;background:#fee2e2;color:#b91c1c;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-bottom:6px;">
+            🔒 ถูกซ่อนโดย Admin (คนทั่วไปจะไม่เห็น)
+          </div>
+        ` : ''}
         <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:6px;">
           <div style="display:flex;align-items:center;gap:8px;">
             <div style="width:30px;height:30px;border-radius:10px;background:rgba(254,243,199,.85);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;">${n.avatar || '👵'}</div>
@@ -8307,6 +9049,11 @@ function renderCommunityNotes() {
             </button>
           </div>
           <div style="display:flex;align-items:center;gap:5px;">
+            ${isAdmin ? `
+              <button type="button" onclick="toggleAdminHideCommunityNote('${n.id}')" style="cursor:pointer;padding:4px 8px;border-radius:8px;border:1.5px solid ${n.hiddenByAdmin ? '#16a34a' : '#d97706'};background:${n.hiddenByAdmin ? 'rgba(220,252,231,.9)' : 'rgba(254,243,199,.9)'};color:${n.hiddenByAdmin ? '#166534' : '#92400e'};font-size:11px;font-weight:700;font-family:'Prompt',sans-serif;" title="สิทธิ์ Admin: ซ่อนหรือแสดงโน้ตนี้">
+                ${n.hiddenByAdmin ? '👁️ แสดง' : '👁️‍🗨️ ซ่อน'}
+              </button>
+            ` : ''}
             <button type="button" onclick="shareCommunityNote('${n.id}')" style="cursor:pointer;padding:4px 8px;border-radius:8px;border:1px solid rgba(200,160,100,.35);background:rgba(255,255,255,.75);color:#7c4010;font-size:11px;font-weight:600;font-family:'Prompt',sans-serif;">${ui.shareBtn}</button>
             ${n.isMine ? `<button type="button" onclick="deleteCommunityNote('${n.id}')" style="cursor:pointer;padding:4px 8px;border-radius:8px;border:1px solid rgba(239,68,68,.3);background:rgba(254,226,226,.7);color:#b91c1c;font-size:11px;font-weight:600;font-family:'Prompt',sans-serif;">🗑️</button>` : ''}
           </div>
@@ -8699,8 +9446,8 @@ function generateReportShareText(rec) {
   const riskEmoji = risk === 'low' ? '🟢' : (risk === 'high' ? '🔴' : '🟡');
   const riskTitle = risk === 'low' ? 'ความเสี่ยงต่ำ (LOW RISK)' : (risk === 'high' ? 'ความเสี่ยงสูง (HIGH RISK)' : 'ความเสี่ยงปานกลาง (MODERATE RISK)');
   const followUp = risk === 'low' ? '12 เดือน' : (risk === 'high' ? '3 เดือน' : '6 เดือน');
-  const balancePassed = rec.balancePassed || (risk === 'low' ? '4/4 ท่า' : (risk === 'high' ? '1/4 ท่า' : '2/4 ท่า'));
-  const floorRise = rec.floorRise || (risk === 'low' ? 'ปกติ (ลุกเองได้)' : (risk === 'high' ? 'ต้องมีคนช่วยพยุง' : 'ช้า/ต้องใช้มือดันเข่า'));
+  const balancePassed = rec.balancePassed || 'ไม่ได้ทดสอบ';
+  const floorRise = rec.floorRise || 'ไม่ได้ทดสอบ';
 
   return `🛡️ [เต็มก้าว FULLSTEP] รายงานผลประเมินความเสี่ยงหกล้ม
 👤 ผู้รับการประเมิน: ${state.user.name} (อายุ ${state.user.age} ปี)
@@ -8918,11 +9665,11 @@ function generateReportCanvas(rec, callback) {
   ctx.textBaseline = 'alphabetic';
   ctx.font = 'bold 17px "Prompt", sans-serif';
   ctx.fillStyle = '#4A2800';
-  ctx.fillText(state.user.name || 'นายวิชัย ใจดี', 120, 178);
+  ctx.fillText(state.user.name || '-', 120, 178);
 
   ctx.font = '12px "Prompt", sans-serif';
   ctx.fillStyle = '#7C4010';
-  ctx.fillText(`เพศ: ${state.user.gender || 'ชาย'}   |   อายุ: ${state.user.age || '68'} ปี   |   โทร: ${state.user.phone || '089-123-4567'}   |   รอบที่: #${rec.id || 1}`, 120, 199);
+  ctx.fillText(`เพศ: ${state.user.gender || '-'}   |   อายุ: ${state.user.age || '-'} ปี   |   โทร: ${(state.user.phone && state.user.phone !== '-') ? state.user.phone : '-'}   |   รอบที่: #${rec.id || 1}`, 120, 199);
   ctx.fillText(`📅 วันที่ประเมิน: ${rec.date || '-'}    •    👨‍⚕️ ผู้ประเมิน: ${rec.assessor || state.user.name}`, 120, 219);
 
   // 3. Risk Level Banner (y = 246 to 336)
@@ -9011,13 +9758,13 @@ function generateReportCanvas(rec, callback) {
     },
     {
       label: '🦶 ทรงตัว 4 ท่า (4-Stage Balance)',
-      val: (rec.balancePassed || (risk === 'low' ? '4/4 ท่า (ผ่านสมบูรณ์)' : (risk === 'high' ? '1/4 ท่า (ไม่ผ่าน)' : '2/4 ท่า'))),
+      val: (rec.balancePassed && !rec.balancePassed.includes('ไม่ได้ทดสอบ') ? rec.balancePassed + ' ท่า' : 'ไม่ได้ทดสอบ (ข้าม)'),
       sub: 'เท้าชิด, กึ่งต่อเท้า, ต่อเท้าตรง, ขาเดียว (10วิ)',
       accent: '#8b5cf6'
     },
     {
       label: '🧎 ลุกจากพื้น (BESTest Item 5)',
-      val: (rec.floorRise || (risk === 'low' ? 'ปกติ (ลุกเองได้)' : (risk === 'high' ? 'ต้องมีคนช่วยพยุง' : 'ช้า/ต้องใช้มือดันเข่า'))),
+      val: (rec.floorRise || 'ไม่ได้ทดสอบ (ข้าม)'),
       sub: 'ประเมินความเสี่ยงภาวะนอนค้าง (Long-lie)',
       accent: '#0d9488'
     }
@@ -9276,28 +10023,61 @@ function openRecordDetail(id) {
     scoreSub.style.color = (rec.q12Score >= 4 ? '#ef4444' : '#166534');
   }
 
+  const tugCard = document.getElementById('detail-rec-tug-card');
+  const tugValEl = document.getElementById('detail-rec-tug');
   const tugSub = document.getElementById('detail-rec-tug-sub');
   if(tugSub) {
     if(rec.tug && rec.tug !== '-') {
-      if(rec.tug < 10) { tugSub.textContent = `< 10 ${d.secUnit || 'วิ'} (${d.lblNormal || 'คล่องแคล่วดีมาก'})`; tugSub.style.color = '#166534'; }
-      else if(rec.tug <= 20) { tugSub.textContent = `10–20 ${d.secUnit || 'วิ'} (${d.lblNeedsWatch || 'เฝ้าระวัง'})`; tugSub.style.color = '#d97706'; }
-      else { tugSub.textContent = `> 20 ${d.secUnit || 'วิ'} (${d.riskHigh || 'เสี่ยงสูง'})`; tugSub.style.color = '#dc2626'; }
+      tugValEl.textContent = rec.tug + ' ' + (d.secUnit || 'วิ');
+      if(rec.tug < 10) {
+        tugValEl.style.color = '#166534';
+        if(tugCard) tugCard.style.borderLeftColor = '#22c55e';
+        tugSub.textContent = `✅ < 10 ${d.secUnit || 'วิ'} (${d.lblNormal || 'คล่องแคล่วดีมาก'})`;
+        tugSub.style.color = '#166534';
+      } else if(rec.tug <= 20) {
+        tugValEl.style.color = '#d97706';
+        if(tugCard) tugCard.style.borderLeftColor = '#f59e0b';
+        tugSub.textContent = `⚠️ 10–20 ${d.secUnit || 'วิ'} (${d.lblNeedsWatch || 'เฝ้าระวัง'})`;
+        tugSub.style.color = '#d97706';
+      } else {
+        tugValEl.style.color = '#dc2626';
+        if(tugCard) tugCard.style.borderLeftColor = '#ef4444';
+        tugSub.textContent = `🚨 > 20 ${d.secUnit || 'วิ'} (${d.riskHigh || 'เสี่ยงสูง'})`;
+        tugSub.style.color = '#dc2626';
+      }
     } else {
-      tugSub.textContent = d.lblUntested || 'ไม่ได้ทดสอบ'; tugSub.style.color = '#a07850';
+      tugValEl.textContent = '⚪ ' + (d.lblUntested || 'ไม่ได้ทดสอบ');
+      tugValEl.style.color = '#737373';
+      if(tugCard) tugCard.style.borderLeftColor = '#a3a3a3';
+      tugSub.textContent = d.lblUntested || 'ไม่ได้ทดสอบ (ข้าม)';
+      tugSub.style.color = '#737373';
     }
   }
 
+  const chairCard = document.getElementById('detail-rec-chair-card');
+  const chairValEl = document.getElementById('detail-rec-chair');
   const chairSub = document.getElementById('detail-rec-chair-sub');
   if(chairSub) {
     if(rec.chair && rec.chair !== '-') {
+      chairValEl.textContent = rec.chair + ' ' + (d.timesUnit || 'ครั้ง');
       const threshold = (state.user && state.user.gender === 'หญิง') ? 10 : 12;
       if(rec.chair >= threshold) {
-        chairSub.textContent = `${d.lblPassed || 'ผ่านเกณฑ์'} (≥ ${threshold} ${d.timesUnit || 'ครั้ง'})`; chairSub.style.color = '#166534';
+        chairValEl.style.color = '#166534';
+        if(chairCard) chairCard.style.borderLeftColor = '#22c55e';
+        chairSub.textContent = `✅ ${d.lblPassed || 'ผ่านเกณฑ์'} (≥ ${threshold} ${d.timesUnit || 'ครั้ง'})`;
+        chairSub.style.color = '#166534';
       } else {
-        chairSub.textContent = `${d.lblBelowCriteria || 'ต่ำกว่าเกณฑ์'} (< ${threshold} ${d.timesUnit || 'ครั้ง'})`; chairSub.style.color = '#dc2626';
+        chairValEl.style.color = '#dc2626';
+        if(chairCard) chairCard.style.borderLeftColor = '#ef4444';
+        chairSub.textContent = `⚠️ ${d.lblBelowCriteria || 'ต่ำกว่าเกณฑ์'} (< ${threshold} ${d.timesUnit || 'ครั้ง'})`;
+        chairSub.style.color = '#dc2626';
       }
     } else {
-      chairSub.textContent = d.lblUntested || 'ไม่ได้ทดสอบ'; chairSub.style.color = '#a07850';
+      chairValEl.textContent = '⚪ ' + (d.lblUntested || 'ไม่ได้ทดสอบ');
+      chairValEl.style.color = '#737373';
+      if(chairCard) chairCard.style.borderLeftColor = '#a3a3a3';
+      chairSub.textContent = d.lblUntested || 'ไม่ได้ทดสอบ (ข้าม)';
+      chairSub.style.color = '#737373';
     }
   }
 
@@ -9357,45 +10137,78 @@ function renderDetailBalance(rec) {
   const lang = state.language || 'th';
   const d = i18n[lang] || i18n.th;
 
-  const risk = rec.risk || 'mod';
-  const passedStr = rec.balancePassed || (risk === 'low' ? '4/4' : (risk === 'high' ? '1/4' : '2/4'));
-  if(badge) badge.textContent = `${d.lblPassed || 'ผ่าน'} ${passedStr}`;
+  const passedStr = (rec.balancePassed || '').trim();
+  const isUntested = !passedStr || passedStr === '-' || passedStr.includes('ไม่ได้ทดสอบ') || passedStr.includes('ข้าม') || passedStr.toLowerCase().includes('untested') || passedStr.includes('未');
 
   const baseStages = (d.balanceStages && d.balanceStages.length === 4) ? d.balanceStages : balanceStages;
   let stages = [];
-  if(passedStr.includes('4/4') || risk === 'low') {
-    stages = [
-      { name: baseStages[0].name, pass: true, desc: (d.lblPassed || 'ผ่าน') + ` (10 ${d.secUnit || 'วิ'})` },
-      { name: baseStages[1].name, pass: true, desc: (d.lblPassed || 'ผ่าน') + ` (10 ${d.secUnit || 'วิ'})` },
-      { name: baseStages[2].name, pass: true, desc: (d.lblPassed || 'ผ่าน') + ` (10 ${d.secUnit || 'วิ'})` },
-      { name: baseStages[3].name, pass: true, desc: (d.lblPassed || 'ผ่าน') + ` (10 ${d.secUnit || 'วิ'})` }
-    ];
-  } else if(passedStr.includes('1/4') || risk === 'high') {
-    stages = [
-      { name: baseStages[0].name, pass: true, desc: (d.lblPassed || 'ผ่าน') + ` (10 ${d.secUnit || 'วิ'})` },
-      { name: baseStages[1].name, pass: false, desc: d.btnFailBalance || 'ไม่ผ่าน' },
-      { name: baseStages[2].name, pass: false, desc: d.btnFailBalance || 'ไม่ผ่าน' },
-      { name: baseStages[3].name, pass: false, desc: d.btnFailBalance || 'ไม่ผ่าน' }
-    ];
-  } else if(passedStr.includes('ไม่ได้ทดสอบ') || passedStr.includes('ข้าม') || passedStr.includes('Untested')) {
+
+  if(isUntested) {
+    if(badge) {
+      badge.textContent = '⚪ ' + (d.lblUntested || 'ไม่ได้ทดสอบ');
+      badge.style.color = '#525252';
+      badge.style.background = 'rgba(160,160,160,.18)';
+    }
     stages = [
       { name: baseStages[0].name, pass: null, desc: d.lblUntested || 'ไม่ได้ทดสอบ' },
       { name: baseStages[1].name, pass: null, desc: d.lblUntested || 'ไม่ได้ทดสอบ' },
       { name: baseStages[2].name, pass: null, desc: d.lblUntested || 'ไม่ได้ทดสอบ' },
       { name: baseStages[3].name, pass: null, desc: d.lblUntested || 'ไม่ได้ทดสอบ' }
     ];
-  } else {
-    // 2/4 or moderate
+  } else if(passedStr.includes('4/4')) {
+    if(badge) {
+      badge.textContent = `✅ ${d.lblPassed || 'ผ่าน'} 4/4 (${d.lblNormal || 'ปลอดภัย'})`;
+      badge.style.color = '#166534';
+      badge.style.background = 'rgba(34,197,94,.18)';
+    }
+    stages = [
+      { name: baseStages[0].name, pass: true, desc: (d.lblPassed || 'ผ่าน') + ` (10 ${d.secUnit || 'วิ'})` },
+      { name: baseStages[1].name, pass: true, desc: (d.lblPassed || 'ผ่าน') + ` (10 ${d.secUnit || 'วิ'})` },
+      { name: baseStages[2].name, pass: true, desc: (d.lblPassed || 'ผ่าน') + ` (10 ${d.secUnit || 'วิ'})` },
+      { name: baseStages[3].name, pass: true, desc: (d.lblPassed || 'ผ่าน') + ` (10 ${d.secUnit || 'วิ'})` }
+    ];
+  } else if(passedStr.includes('3/4')) {
+    if(badge) {
+      badge.textContent = `✅ ${d.lblPassed || 'ผ่าน'} 3/4`;
+      badge.style.color = '#166534';
+      badge.style.background = 'rgba(34,197,94,.18)';
+    }
+    stages = [
+      { name: baseStages[0].name, pass: true, desc: (d.lblPassed || 'ผ่าน') + ` (10 ${d.secUnit || 'วิ'})` },
+      { name: baseStages[1].name, pass: true, desc: (d.lblPassed || 'ผ่าน') + ` (10 ${d.secUnit || 'วิ'})` },
+      { name: baseStages[2].name, pass: true, desc: (d.lblPassed || 'ผ่าน') + ` (10 ${d.secUnit || 'วิ'})` },
+      { name: baseStages[3].name, pass: false, desc: d.btnFailBalance || 'ไม่ผ่าน' }
+    ];
+  } else if(passedStr.includes('2/4')) {
+    if(badge) {
+      badge.textContent = `⚠️ ${d.lblPassed || 'ผ่าน'} 2/4 (${d.lblNeedsWatch || 'เฝ้าระวัง'})`;
+      badge.style.color = '#92400e';
+      badge.style.background = 'rgba(245,158,11,.18)';
+    }
     stages = [
       { name: baseStages[0].name, pass: true, desc: (d.lblPassed || 'ผ่าน') + ` (10 ${d.secUnit || 'วิ'})` },
       { name: baseStages[1].name, pass: true, desc: (d.lblPassed || 'ผ่าน') + ` (10 ${d.secUnit || 'วิ'})` },
       { name: baseStages[2].name, pass: false, desc: d.btnFailBalance || 'ไม่ผ่าน' },
       { name: baseStages[3].name, pass: false, desc: d.btnFailBalance || 'ไม่ผ่าน' }
     ];
+  } else {
+    // 1/4 or 0/4
+    const cnt = passedStr.includes('1/4') ? '1/4' : '0/4';
+    if(badge) {
+      badge.textContent = `🚨 ${d.lblPassed || 'ผ่าน'} ${cnt} (${d.riskHigh || 'เสี่ยงสูง'})`;
+      badge.style.color = '#991b1b';
+      badge.style.background = 'rgba(239,68,68,.18)';
+    }
+    stages = [
+      { name: baseStages[0].name, pass: cnt === '1/4', desc: cnt === '1/4' ? (d.lblPassed || 'ผ่าน') + ` (10 ${d.secUnit || 'วิ'})` : (d.btnFailBalance || 'ไม่ผ่าน') },
+      { name: baseStages[1].name, pass: false, desc: d.btnFailBalance || 'ไม่ผ่าน' },
+      { name: baseStages[2].name, pass: false, desc: d.btnFailBalance || 'ไม่ผ่าน' },
+      { name: baseStages[3].name, pass: false, desc: d.btnFailBalance || 'ไม่ผ่าน' }
+    ];
   }
 
   container.innerHTML = stages.map(s => `
-    <div style="display:flex;justify-content:space-between;padding:8px 12px;background:${s.pass === true ? 'rgba(220,252,231,.6)' : (s.pass === false ? 'rgba(254,226,226,.6)' : 'rgba(240,240,240,.6)')};border-radius:10px;">
+    <div style="display:flex;justify-content:space-between;padding:8px 12px;background:${s.pass === true ? 'rgba(220,252,231,.6)' : (s.pass === false ? 'rgba(254,226,226,.6)' : 'rgba(240,240,240,.65)')};border-radius:10px;">
       <span style="font-weight:600;color:${s.pass === true ? '#166534' : (s.pass === false ? '#991b1b' : '#525252')};">${s.name}</span>
       <span style="font-weight:700;color:${s.pass === true ? '#166534' : (s.pass === false ? '#991b1b' : '#525252')};">${s.pass === true ? '✅ ' + s.desc : (s.pass === false ? '❌ ' + s.desc : '⚪ ' + s.desc)}</span>
     </div>
@@ -9409,36 +10222,40 @@ function renderDetailFloor(rec) {
   const lang = state.language || 'th';
   const d = i18n[lang] || i18n.th;
 
-  const text = rec.floorRise || '';
-  const risk = rec.risk || 'mod';
+  const text = (rec.floorRise || '').trim();
+  const isUntested = !text || text === '-' || text.includes('ข้าม') || text.includes('ไม่ได้ทดสอบ') || text.toLowerCase().includes('untested') || text.includes('未') || rec.floorScore === '' || rec.floorScore === null || rec.floorScore === undefined;
 
-  if(text.includes('ปกติ') || (risk === 'low' && !text.includes('ช้า') && !text.includes('ช่วย'))) {
-    if(badge) { badge.textContent = `${d.statScoreLbl || 'คะแนน'} 2 — ${d.lblNormal || 'ปกติ'}`; badge.style.color = '#166534'; badge.style.background = 'rgba(34,197,94,.15)'; }
+  if(isUntested) {
+    if(badge) {
+      badge.textContent = '⚪ ' + (d.lblUntested || 'ไม่ได้ทดสอบ');
+      badge.style.color = '#525252';
+      badge.style.background = 'rgba(160,160,160,.18)';
+    }
+    container.innerHTML = `
+      <div style="background:rgba(240,240,240,.65);border-left:4px solid #737373;padding:12px 14px;border-radius:12px;font-size:13px;color:#525252;line-height:1.6;">
+        <div style="font-weight:700;margin-bottom:3px;">⚪ ${d.lblUntested || 'ไม่ได้ทำการทดสอบการลุกจากพื้น'}:</div>
+        <div>${d.floorUntestedDesc || 'ผู้รับการประเมินไม่ได้ทดสอบหรือเลือกข้ามการทดสอบท่าลุกขึ้นจากพื้น (BESTest Item 5) ในรอบนี้'}</div>
+      </div>
+    `;
+  } else if(rec.floorScore === 2 || text.includes('ปกติ') || text.includes('ลุกเองได้')) {
+    if(badge) { badge.textContent = `✅ ${d.statScoreLbl || 'คะแนน'} 2 — ${d.lblNormal || 'ปกติ'}`; badge.style.color = '#166534'; badge.style.background = 'rgba(34,197,94,.18)'; }
     container.innerHTML = `
       <div style="background:rgba(220,252,231,.65);border-left:4px solid #16a34a;padding:12px 14px;border-radius:12px;font-size:13px;color:#166534;line-height:1.6;">
         <div style="font-weight:700;margin-bottom:3px;">✅ ${d.floor2Title || 'คะแนน 2 — ปกติ (Normal / Independent):'}</div>
         <div>${d.floor2Desc || 'สามารถลุกขึ้นจากพื้นสู่ท่ายืนได้ด้วยตนเองอย่างคล่องแคล่วและปลอดภัย ไม่ต้องใช้อุปกรณ์หรือคนช่วย'}</div>
       </div>
     `;
-  } else if(text.includes('ช่วย') || text.includes('พยุง') || (risk === 'high' && !text.includes('ปกติ'))) {
-    if(badge) { badge.textContent = `${d.statScoreLbl || 'คะแนน'} 0 — ${d.riskHigh || 'บกพร่องรุนแรง'}`; badge.style.color = '#991b1b'; badge.style.background = 'rgba(239,68,68,.15)'; }
+  } else if(rec.floorScore === 0 || text.includes('ช่วย') || text.includes('พยุง') || text.includes('ลุกไม่ได้')) {
+    if(badge) { badge.textContent = `🚨 ${d.statScoreLbl || 'คะแนน'} 0 — ${d.riskHigh || 'บกพร่องรุนแรง'}`; badge.style.color = '#991b1b'; badge.style.background = 'rgba(239,68,68,.18)'; }
     container.innerHTML = `
       <div style="background:rgba(254,226,226,.65);border-left:4px solid #ef4444;padding:12px 14px;border-radius:12px;font-size:13px;color:#991b1b;line-height:1.6;">
         <div style="font-weight:700;margin-bottom:3px;">🚨 ${d.floor0Title || 'คะแนน 0 — บกพร่องรุนแรง (Severe Impairment / Dependent):'}</div>
         <div>${d.floor0Desc || 'ไม่สามารถลุกขึ้นจากพื้นสู่ท่ายืนได้ด้วยตนเอง จำเป็นต้องมีผู้ดูแลช่วยพยุงขึ้น'}</div>
       </div>
     `;
-  } else if(text.includes('ข้าม') || text.includes('ไม่ได้ทดสอบ') || text.includes('Untested')) {
-    if(badge) { badge.textContent = d.lblUntested || 'ข้ามการทดสอบ'; badge.style.color = '#525252'; badge.style.background = 'rgba(160,160,160,.15)'; }
-    container.innerHTML = `
-      <div style="background:rgba(240,240,240,.65);border-left:4px solid #737373;padding:12px 14px;border-radius:12px;font-size:13px;color:#525252;line-height:1.6;">
-        <div style="font-weight:700;margin-bottom:3px;">⚪ ${d.lblUntested || 'ไม่ได้ทำการทดสอบการลุกจากพื้น'}:</div>
-        <div>${d.chairTestDesc || 'ผู้รับการประเมินเลือกข้ามการทดสอบท่าลุกจากพื้นในรอบนี้'}</div>
-      </div>
-    `;
   } else {
     // Score 1: Moderate
-    if(badge) { badge.textContent = `${d.statScoreLbl || 'คะแนน'} 1 — ${d.lblNeedsWatch || 'บกพร่องปานกลาง'}`; badge.style.color = '#78350f'; badge.style.background = 'rgba(245,158,11,.15)'; }
+    if(badge) { badge.textContent = `⚠️ ${d.statScoreLbl || 'คะแนน'} 1 — ${d.lblNeedsWatch || 'บกพร่องปานกลาง'}`; badge.style.color = '#78350f'; badge.style.background = 'rgba(245,158,11,.18)'; }
     container.innerHTML = `
       <div style="background:rgba(254,243,199,.65);border-left:4px solid #f59e0b;padding:12px 14px;border-radius:12px;font-size:13px;color:#78350f;line-height:1.6;">
         <div style="font-weight:700;margin-bottom:3px;">⚠️ ${d.floor1Title || 'คะแนน 1 — บกพร่องปานกลาง (Modified Independent):'}</div>
@@ -9579,6 +10396,18 @@ function resetAssessment() {
   state.q12Answers = {}; state.q12Score = 0; state.floorScore = null;
   state.assessmentSaved = false;
   state.chairCount = 0; state.tugTime = 0; state.balanceResults = [];
+  ['falls-1', 'falls-2', 'injury-yes', 'injury-no'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.classList.remove('active');
+      el.style.background = '';
+    }
+  });
+  const nextBtn = document.getElementById('sub-q1-next-btn');
+  if (nextBtn) {
+    nextBtn.disabled = true;
+    nextBtn.style.opacity = '.45';
+  }
   showKQQuestion(0); activateStep('step-3kq', 1); updateStepDots(1);
 }
 
@@ -9590,10 +10419,19 @@ function showKQQuestion(idx) {
   const qPrefix = d.kqQNumPrefix || 'ข้อที่';
 
   const qEl = document.getElementById('kq-question');
-  if(qEl) qEl.textContent = qText;
+  if(qEl) {
+    qEl.textContent = qText;
+    qEl.style.display = 'block';
+  }
 
   const numEl = document.getElementById('kq-q-num');
-  if(numEl) numEl.textContent = `${qPrefix} ${idx + 1}/3`;
+  if(numEl) {
+    numEl.textContent = `${qPrefix} ${idx + 1}/3`;
+    numEl.style.display = 'block';
+  }
+
+  const speakBtn = document.getElementById('btn-speak-kq');
+  if(speakBtn) speakBtn.style.display = 'inline-flex';
 
   const subQ1 = document.getElementById('sub-q1');
   if(subQ1) subQ1.style.display = 'none';
@@ -9649,16 +10487,17 @@ function setSubQ(key, val) {
   const lang = state.language || 'th';
   const d = i18n[lang] || i18n.th;
   state[key] = val;
-  const activeStyle = 'background:linear-gradient(135deg,rgba(249,115,22,.9),rgba(245,158,11,.9));color:white;border-color:rgba(255,200,100,.6);';
   
   if(key === 'falls') {
-    document.getElementById('falls-1').style.cssText = '';
-    document.getElementById('falls-2').style.cssText = '';
-    document.getElementById(val === '1' ? 'falls-1' : 'falls-2').style.cssText = activeStyle;
+    const f1 = document.getElementById('falls-1');
+    const f2 = document.getElementById('falls-2');
+    if (f1) { f1.classList.toggle('active', val === '1'); f1.style.background = ''; }
+    if (f2) { f2.classList.toggle('active', val === '2+'); f2.style.background = ''; }
   } else {
-    document.getElementById('injury-yes').style.cssText = '';
-    document.getElementById('injury-no').style.cssText = '';
-    document.getElementById(val === 'yes' ? 'injury-yes' : 'injury-no').style.cssText = activeStyle;
+    const iy = document.getElementById('injury-yes');
+    const in_ = document.getElementById('injury-no');
+    if (iy) { iy.classList.toggle('active', val === 'yes'); iy.style.background = ''; }
+    if (in_) { in_.classList.toggle('active', val === 'no'); in_.style.background = ''; }
   }
 
   if(state.falls && state.injury) {
@@ -9669,8 +10508,11 @@ function setSubQ(key, val) {
       nextBtn.style.opacity = '1';
     }
     // Also enable main Yes button
-    document.getElementById('btn-yes').disabled = false;
-    document.getElementById('btn-yes').textContent = d.btnYesProceed || '✅ ใช่ → ไปข้อ 2/3 ต่อไป';
+    const btnYes = document.getElementById('btn-yes');
+    if(btnYes) {
+      btnYes.disabled = false;
+      btnYes.textContent = d.btnYesProceed || '✅ ใช่ → ไปข้อ 2/3 ต่อไป';
+    }
   }
 }
 
@@ -9689,10 +10531,26 @@ function submitKQ1Sub() {
 
 function finish3KQ() {
   const anyYes = state.kqAnswers.some(a => a);
+  const lang = state.language || 'th';
+  const d = i18n[lang] || i18n.th;
+
   if(!anyYes) {
     // Low risk from 3KQ! Show the choice box so user can test 4 physical tests or 12Q or skip
     document.getElementById('main-kq-btns').style.display = 'none';
     document.getElementById('sub-q1').style.display = 'none';
+
+    // Hide Question 3 text and audio button so user is not confused
+    const qEl = document.getElementById('kq-question');
+    if(qEl) qEl.style.display = 'none';
+    const speakBtn = document.getElementById('btn-speak-kq');
+    if(speakBtn) speakBtn.style.display = 'none';
+
+    // Replace the "ข้อที่ 3/3" counter with a clear completion badge
+    const numEl = document.getElementById('kq-q-num');
+    if(numEl) {
+      numEl.innerHTML = `<div style="display:inline-flex;align-items:center;gap:6px;background:rgba(34,197,94,.16);color:#166534;padding:4px 12px;border-radius:20px;font-weight:700;font-size:13px;border:1px solid rgba(34,197,94,.3);">✅ ${d.kqCompleteNotice || 'ตอบคำถามคัดกรอง 3 ข้อครบถ้วนแล้ว'}</div>`;
+    }
+
     const boxChoice = document.getElementById('box-kq-lowrisk-choice');
     if(boxChoice) boxChoice.style.display = 'block';
   } else {
@@ -9887,22 +10745,7 @@ function updatePhysicalHeaderNotice() {
 
 
 function skipPhysicalToResult() {
-  let risk = 'low';
-  const anyYes = state.kqAnswers && state.kqAnswers.some(a => a);
-  const fallsMultiple = state.falls === '2+';
-  const fallsInjured = state.falls === '1' && state.injury === 'yes';
-  const score12High = state.q12Score >= 4;
-
-  if(fallsMultiple || fallsInjured) {
-    risk = 'high';
-  } else if(score12High) {
-    risk = 'mod';
-  } else if(!anyYes) {
-    risk = 'low';
-  } else {
-    risk = 'mod';
-  }
-
+  const risk = (typeof calculateClinicalRisk === 'function') ? calculateClinicalRisk() : 'mod';
   state.user.risk = risk;
   updateProfileDisplay();
   showResult(risk);
@@ -10322,39 +11165,63 @@ function autoSaveAssessmentRecord(risk) {
 }
 
 
-function goToResult() {
-  let risk = 'mod';
+function calculateClinicalRisk() {
   const anyYes = state.kqAnswers && state.kqAnswers.some(a => a);
   const fallsMultiple = state.falls === '2+';
   const fallsInjured = state.falls === '1' && state.injury === 'yes';
-  const score12High = state.q12Score >= 4;
+  const fallsSingleNoInjury = state.falls === '1' && state.injury === 'no';
+  const unsteady = state.kqAnswers && !!state.kqAnswers[1];
+  const fearOfFall = state.kqAnswers && !!state.kqAnswers[2];
+  const score12High = state.q12Score !== undefined && state.q12Score >= 4;
 
+  const hadChair = state.chairCount > 0 || state.chairUnable;
+  const hadTug = state.tugTime > 0 || state.tugUnable;
+  const hadBalance = state.balanceResults && state.balanceResults.length > 0;
+  const hadFloor = state.floorScore !== null && state.floorScore !== undefined && state.floorScore !== '';
+
+  const chairThreshold = (state.user && state.user.gender === 'หญิง') ? 10 : 12;
+  const chairWeak = state.chairCount > 0 && state.chairCount < chairThreshold;
+  const chairFailed = !!state.chairUnable;
+
+  const tugVerySlow = state.tugTime > 20.0;
+  const tugSlow = state.tugTime >= 12.0;
+  const tugFailed = !!state.tugUnable;
+
+  const balanceSevereFail = hadBalance && state.balanceResults[0] === false;
+  const balancePassedCount = hadBalance ? state.balanceResults.filter(Boolean).length : 4;
+  const balanceImpaired = hadBalance && balancePassedCount < 3; // Failed tandem stance < 10s
+
+  const floorUnable = hadFloor && state.floorScore === 0;
+  const floorImpaired = hadFloor && state.floorScore === 1;
+
+  // 1. HIGH RISK (เสี่ยงสูง):
   if(fallsMultiple || fallsInjured) {
-    risk = 'high';
-  } else if(!anyYes && (!state.q12Score || state.q12Score < 4)) {
-    // Low risk initially from questionnaires!
-    // Check if physical tests revealed mobility impairments:
-    const tugSlow = state.tugTime > 13.5;
-    const chairWeak = state.chairCount > 0 && state.chairCount < 8;
-    const balanceFailedEarly = state.balanceResults.length > 0 && state.balanceResults[0] === false;
-    
-    if(tugSlow || chairWeak || balanceFailedEarly) {
-      risk = 'mod'; // Found hidden balance/mobility deficit!
-    } else {
-      risk = 'low'; // Confirmed low risk & good physical fitness!
-    }
-  } else if(score12High) {
-    const tugVerySlow = state.tugTime > 15.0;
-    const floorUnable = state.floorScore === 0;
-    if(tugVerySlow || floorUnable) {
-      risk = 'high';
-    } else {
-      risk = 'mod';
-    }
-  } else {
-    risk = 'mod';
+    return 'high';
+  }
+  if(tugFailed || chairFailed || tugVerySlow) {
+    return 'high';
+  }
+  if(score12High && (floorUnable || state.tugTime > 15.0)) {
+    return 'high';
+  }
+  if(balanceSevereFail && (score12High || anyYes || hadTug || hadChair)) {
+    return 'high';
   }
 
+  // 2. MODERATE RISK (เสี่ยงปานกลาง):
+  if(fallsSingleNoInjury || unsteady || fearOfFall || score12High) {
+    return 'mod';
+  }
+  if(tugSlow || chairWeak || balanceImpaired || floorUnable || floorImpaired) {
+    return 'mod'; // Objective physical deficits elevate out of low risk!
+  }
+
+  // 3. LOW RISK (เสี่ยงต่ำ / ปลอดภัย):
+  return 'low';
+}
+
+function goToResult() {
+  const risk = calculateClinicalRisk();
   state.user.risk = risk;
   updateProfileDisplay();
   showResult(risk);
@@ -10406,6 +11273,24 @@ function showResult(risk, autoSave = true) {
   const roundNum = savedRec ? savedRec.id : 1;
   const savedDesc = d.resultSavedDesc ? d.resultSavedDesc.replace('{round}', roundNum) : `ข้อมูลถูกบันทึกเป็นรอบที่ #${roundNum} และอัปเดตสถิติในโปรไฟล์อัตโนมัติ`;
 
+  const bPassed = savedRec && savedRec.balancePassed ? savedRec.balancePassed : '';
+  const isBalUntested = !bPassed || bPassed === '-' || bPassed.includes('ไม่ได้ทดสอบ') || bPassed.includes('ข้าม') || bPassed.toLowerCase().includes('untested') || bPassed.includes('未');
+  const balDisplay = isBalUntested ? `⚪ ${d.lblUntested || 'ไม่ได้ทดสอบ'}` : `✅ ${d.lblPassed || 'ผ่าน'} ${bPassed}`;
+  const balColor = isBalUntested ? '#737373' : '#166534';
+
+  const fRise = savedRec && savedRec.floorRise ? savedRec.floorRise : '';
+  const isFloorUntested = !fRise || fRise === '-' || fRise.includes('ไม่ได้ทดสอบ') || fRise.includes('ข้าม') || fRise.toLowerCase().includes('untested') || fRise.includes('未') || savedRec.floorScore === '' || savedRec.floorScore === null || savedRec.floorScore === undefined;
+  const floorDisplay = isFloorUntested ? `⚪ ${d.lblUntested || 'ไม่ได้ทดสอบ'}` : (savedRec.floorScore === 2 ? `✅ ${fRise}` : (savedRec.floorScore === 0 ? `🚨 ${fRise}` : `⚠️ ${fRise}`));
+  const floorColor = isFloorUntested ? '#737373' : (savedRec.floorScore === 2 ? '#166534' : (savedRec.floorScore === 0 ? '#991b1b' : '#92400e'));
+
+  const isChairUntested = !savedRec || !savedRec.chair || savedRec.chair === '-' || String(savedRec.chair).includes('ข้าม') || String(savedRec.chair).includes('ไม่ได้ทดสอบ');
+  const chairDisplay = isChairUntested ? `⚪ ${d.lblUntested || 'ไม่ได้ทดสอบ'}` : `${savedRec.chair} ${d.timesUnit || 'ครั้ง'}`;
+  const chairColor = isChairUntested ? '#737373' : '#166534';
+
+  const isTugUntested = !savedRec || !savedRec.tug || savedRec.tug === '-' || String(savedRec.tug).includes('ข้าม') || String(savedRec.tug).includes('ไม่ได้ทดสอบ');
+  const tugDisplay = isTugUntested ? `⚪ ${d.lblUntested || 'ไม่ได้ทดสอบ'}` : `${savedRec.tug} ${d.secUnit || 'วิ'}`;
+  const tugColor = isTugUntested ? '#737373' : '#2563eb';
+
   document.getElementById('result-content').innerHTML = `
     <!-- Auto-saved Confirmation Banner -->
     <div style="background:rgba(34,197,94,.15);backdrop-filter:blur(10px);border:1.5px solid rgba(34,197,94,.5);border-radius:18px;padding:12px 14px;margin-bottom:14px;display:flex;align-items:center;gap:12px;text-align:left;box-shadow:0 4px 16px rgba(34,197,94,.12);">
@@ -10440,19 +11325,19 @@ function showResult(risk, autoSave = true) {
         </div>
         <div style="background:rgba(255,255,255,.6);border-radius:10px;padding:8px 10px;border:1px solid rgba(220,180,130,.2);">
           <div style="font-size:10px;color:#a07850;">⏱️ ${d.recFormLblChair ? d.recFormLblChair.replace(/\(.*\)/, '').trim() : 'ลุกนั่ง 30 วิ'}</div>
-          <div style="font-size:12px;font-weight:700;color:#5a3510;">${savedRec && savedRec.chair !== '-' ? savedRec.chair + ' ' + (d.timesUnit || 'ครั้ง') : (d.lblUntested || 'ไม่ได้ทดสอบ')}</div>
+          <div style="font-size:12px;font-weight:700;color:${chairColor};">${chairDisplay}</div>
         </div>
         <div style="background:rgba(255,255,255,.6);border-radius:10px;padding:8px 10px;border:1px solid rgba(220,180,130,.2);">
           <div style="font-size:10px;color:#a07850;">⏱️ ${d.tugTestTitle ? d.tugTestTitle.replace(/\(.*\)/, '').trim() : 'TUG'}</div>
-          <div style="font-size:12px;font-weight:700;color:#5a3510;">${savedRec && savedRec.tug !== '-' ? savedRec.tug + ' ' + (d.secUnit || 'วิ') : (d.lblUntested || 'ไม่ได้ทดสอบ')}</div>
+          <div style="font-size:12px;font-weight:700;color:${tugColor};">${tugDisplay}</div>
         </div>
         <div style="background:rgba(255,255,255,.6);border-radius:10px;padding:8px 10px;border:1px solid rgba(220,180,130,.2);">
           <div style="font-size:10px;color:#a07850;">🦶 ${d.balanceTestTitle ? d.balanceTestTitle.replace(/\(.*\)/, '').trim() : 'ทรงตัว 4 ท่า'}</div>
-          <div style="font-size:12px;font-weight:700;color:#5a3510;">${savedRec && savedRec.balancePassed ? (savedRec.balancePassed === 'ไม่ได้ทดสอบ' ? (d.lblUntested || 'ไม่ได้ทดสอบ') : (d.lblPassed || 'ผ่าน') + ' ' + savedRec.balancePassed) : (d.lblUntested || 'ไม่ได้ทดสอบ')}</div>
+          <div style="font-size:12px;font-weight:700;color:${balColor};">${balDisplay}</div>
         </div>
         <div style="background:rgba(255,255,255,.6);border-radius:10px;padding:8px 10px;border:1px solid rgba(220,180,130,.2);">
           <div style="font-size:10px;color:#a07850;">🧎 ${d.floorTestTitle ? d.floorTestTitle.replace(/\(.*\)/, '').trim() : 'ลุกจากพื้น'}</div>
-          <div style="font-size:12px;font-weight:700;color:#5a3510;">${savedRec && savedRec.floorRise ? savedRec.floorRise : (d.lblUntested || 'ไม่ได้ทดสอบ')}</div>
+          <div style="font-size:12px;font-weight:700;color:${floorColor};">${floorDisplay}</div>
         </div>
       </div>
     </div>
@@ -10975,21 +11860,27 @@ function doPost(e) {
       shNotes = ss.insertSheet('Community_Notes');
       shNotes.appendRow([
         'Server_Timestamp', 'Note_ID', 'Participant_ID', 'Date_Label',
-        'Author', 'Role', 'Category', 'Content', 'Hearts_Helpful', 'ThinkFirst_Caution'
+        'Author', 'Role', 'Category', 'Content', 'Hearts_Helpful', 'ThinkFirst_Caution', 'Status_Visible'
       ]);
-      shNotes.getRange(1, 1, 1, 10).setFontWeight('bold').setBackground('#fef3c7');
+      shNotes.getRange(1, 1, 1, 11).setFontWeight('bold').setBackground('#fef3c7');
     }
 
     if (action === 'save_note' && body.note) {
       var n = body.note;
       shNotes.appendRow([
         new Date(), n.id, body.participantId, n.date,
-        n.author, n.role, n.category, n.text, n.hearts || 0, n.thinkTwice || 0
+        n.author, n.role, n.category, n.text, n.hearts || 0, n.thinkTwice || 0, n.hiddenByAdmin ? 'HIDDEN' : 'VISIBLE'
       ]);
     } else if (action === 'update_note_reaction' && body.noteId) {
       shNotes.appendRow([
         new Date(), body.noteId, body.participantId, 'REACTION_UPDATE',
-        '-', '-', '-', 'Updated counts', body.hearts || 0, body.thinkTwice || 0
+        '-', '-', '-', 'Updated counts', body.hearts || 0, body.thinkTwice || 0, 'VISIBLE'
+      ]);
+    } else if (action === 'toggle_hide_note' && body.noteId) {
+      shNotes.appendRow([
+        new Date(), body.noteId, body.participantId, 'ADMIN_MODERATION',
+        'ADMIN', 'Admin', 'MODERATION', body.isHidden ? 'ADMIN_SET_HIDDEN' : 'ADMIN_SET_VISIBLE',
+        0, 0, body.isHidden ? 'HIDDEN' : 'VISIBLE'
       ]);
     }
 
@@ -11043,6 +11934,9 @@ function syncDataOnline(fromModal = false) {
         records: state.records
       }));
       const syncedToSheets = await syncPayloadToGoogleSheets('sync_all');
+      if (typeof fetchCommunityNotesFromCloud === 'function') {
+        await fetchCommunityNotesFromCloud(false);
+      }
       if (syncedToSheets) {
         showToast({
           th: '✅ ซิงค์ข้อมูลเข้า Google Sheets วิจัย & คลาวด์สำเร็จ!',
@@ -11100,6 +11994,14 @@ try {
   setAppTheme(savedTheme);
 } catch(e) {
   setAppTheme('light');
+}
+
+// Load & apply saved or default font level (5 levels for seniors)
+try {
+  const savedFontLvl = localStorage.getItem('fullstep_font_level') || '1';
+  setFontLevel(parseInt(savedFontLvl) || 1, false);
+} catch(e) {
+  setFontLevel(1, false);
 }
 
 // Load & apply saved or default language
